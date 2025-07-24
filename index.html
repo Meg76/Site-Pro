@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Megan Mortreux</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/></head>
+<body>
+
+<script>
+  // Empêche le sous-menu de disparaître tant que la souris est dessus
+  document.addEventListener("DOMContentLoaded", function() {
+    const submenu = document.querySelector(".has-submenu");
+    submenu.addEventListener("mouseenter", () => {
+      submenu.querySelector(".submenu").style.display = "block";
+    });
+    submenu.addEventListener("mouseleave", () => {
+      submenu.querySelector(".submenu").style.display = "none";
+    });
+  });
+</script>
+<header>
+<nav class="navbar">
+<div class="logo-container">
+  <img src="photos/logo.png" alt="Logo" class="logo">
+  <span class="nom-site">MEGAN MORTREUX</span>
+</div>
+<ul class="menu">
+<li><a href="index.html">Accueil</a></li>
+<li class="has-submenu">
+<a href="#">Réalisation Vidéo</a>
+<ul class="submenu">
+<li><a href="court-metrage.html">Court-Métrage</a></li>
+<li><a href="motion-design.html">Motion Design</a></li>
+<li><a href="documentaire.html">Documentaire</a></li>
+<li><a href="mariages.html">Mariages</a></li>
+<li><a href="autres-projets.html">Autres Projets</a></li>
+</ul>
+</li>
+<li><a href="photographie.html">Photographie</a></li>
+<li><a href="illustrations.html">Illustrations</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="section-apropos text-center">
+<div class="container">
+<h2 class="fw-bold mb-5">QUI SUIS-JE ?</h2>
+<div class="row align-items-center text-start">
+<div class="col-md-6 mb-4 mb-md-0 text-center">
+<img alt="Photo de moi" class="photo-rond" src="photos/moi.jpg" width="350" height="350"/>
+
+</div>
+<div class="col-md-6">
+<p class="lead">
+          Bonjour, je m'appelle Megan MORTREUX, je suis réalisatrice, vidéaste,photographe et motion designer.
+          À travers mes projets, je cherche à raconter des histoires humaines, visuelles et sincères.
+          Je travaille sur des courts-métrages, documentaires, mariages
+          et projets artistiques variés.
+        </p>
+<a class="btn mt-3" href="https://www.youtube.com/watch?si=EpjdU44987URBmVW&v=3xyQkT1zRwM&feature=youtu.be" target="_blank">Showreel</a>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section-realisations text-center">
+<div class="container">
+<h2 class="fw-bold mb-5">RÉALISATIONS VIDÉO</h2>
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-3 mb-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Court-Métrage</h5>
+<div class="ratio ratio-16x9 mb-3">
+<video autoplay muted loop playsinline controls class="w-100">
+  <source src="videos/court-métrage.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
+</div>
+<a class="btn btn-sm btn-dark w-100" href="court-metrage.html">Voir plus de projets</a>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 mb-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Motion Design</h5>
+<div class="ratio ratio-16x9 mb-3">
+<video autoplay muted loop playsinline controls class="w-100">
+  <source src="videos/motion design.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
+</div>
+<a class="btn btn-sm btn-dark w-100" href="motion-design.html">Voir plus de projets</a>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 mb-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Documentaire</h5>
+<div class="ratio ratio-16x9 mb-3">
+<video autoplay muted loop playsinline controls class="w-100">
+  <source src="videos/documentaire.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
+
+</div>
+<a class="btn btn-sm btn-dark w-100" href="documentaire.html">Voir plus de projets</a>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 mb-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Mariage</h5>
+<div class="ratio ratio-16x9 mb-3">
+<video autoplay muted loop playsinline controls class="w-100">
+  <source src="videos/mariage.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
+
+</div>
+<a class="btn btn-sm btn-dark w-100" href="mariages.html">Voir plus de projets</a>
+</div>
+</div>
+</div>
+</div>
+<a class="btn btn-dark mt-3" href="autres-projets.html">Voir d'autres projets</a>
+</div>
+</section>
+
+
+<section class="section-photographie text-center">
+<div class="container">
+<h2 class="fw-bold mb-4">PHOTOGRAPHIE</h2>
+<div class="mx-auto" style="max-width: 500px;">
+<div class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel" id="carouselPhotos">
+<div class="carousel-inner rounded shadow">
+<div class="carousel-item active">
+<img alt="Photo 1" class="d-block w-100" src="photos/1.jpg" style="aspect-ratio: 16 / 9; object-fit: cover;"/>
+</div>
+<div class="carousel-item">
+<img alt="Photo 2" class="d-block w-100" src="photos/2.jpg" style="aspect-ratio: 16 / 9; object-fit: cover;"/>
+</div>
+<div class="carousel-item">
+<img alt="Photo 3" class="d-block w-100" src="photos/3.jpg" style="aspect-ratio: 16 / 9; object-fit: cover;"/>
+</div>
+<div class="carousel-item">
+<img alt="Photo 4" class="d-block w-100" src="photos/4.jpg" style="aspect-ratio: 16 / 9; object-fit: cover;"/>
+</div>
+<div class="carousel-item">
+<img alt="Photo 5" class="d-block w-100" src="photos/5.jpg" style="aspect-ratio: 16 / 9; object-fit: cover;"/>
+</div>
+</div>
+<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselPhotos" type="button">
+<span aria-hidden="true" class="carousel-control-prev-icon"></span>
+<span class="visually-hidden">Précédent</span>
+</button>
+<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselPhotos" type="button">
+<span aria-hidden="true" class="carousel-control-next-icon"></span>
+<span class="visually-hidden">Suivant</span>
+</button>
+</div>
+<a class="btn mt-4" href="photographie.html">Voir galerie</a>
+</div>
+</div>
+</section>
+
+
+<!-- Section Illustrations -->
+<section class="section-illustrations text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-5">ILLUSTRATIONS</h2>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <img src="illustrations/Photoshop-2eme Atelier.png" class="img-fluid rounded shadow" alt="Illustration 1">
+        <p class="mt-3"></p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="illustrations/affiche_voiture.jpg" class="img-fluid rounded shadow" alt="Illustration 2">
+        <p class="mt-3"></p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="illustrations/danseuse.jpg" class="img-fluid rounded shadow" alt="Illustration 3">
+        <p class="mt-3"></p>
+      </div>
+    </div>
+
+    <a href="illustrations.html" class="btn mt-4">Voir plus de projets</a>
+  </div>
+</section>
+
+<section id="contact" class="contact-section bg-dark text-light py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Me contacter</h2>
+    <div class="row justify-content-center align-items-start">
+      <div class="col-md-5">
+        <div class="mb-3">
+          <p><strong>Email :</strong> megan_mortreux@hotmail.fr</p>
+        </div>
+        <div>
+          <p><strong>Téléphone :</strong> 06 27 05 46 49</p>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <p><strong>Réseaux sociaux :</strong></p>
+        <!--<a href="https://instagram.com" target="_blank" class="text-info me-3">Instagram</a>-->
+        <a href="https://www.linkedin.com/in/megan-mortreux-8576b3213" target="_blank" class="text-info">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.addEventListener('mouseenter', function () {
+      const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(dropdown.querySelector('.dropdown-toggle'));
+      bsDropdown.show();
+    });
+    dropdown.addEventListener('mouseleave', function () {
+      const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(dropdown.querySelector('.dropdown-toggle'));
+      bsDropdown.hide();
+    });
+  });
+</script>
+
+
+
+</body>
+</html>

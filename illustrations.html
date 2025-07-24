@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Illustrations</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="illustrations.css">
+  
+</head>
+<body>
+  <header class="text-center bg-dark text-light py-5">
+    <h1 class="section-title">ILLUSTRATIONS</h1>
+    <p class="lead">Voici une sélection de mes réalisations graphiques et illustrations.</p>
+  </header>
+
+<!--
+  <section class="gallery">
+
+ 
+    <div class="gallery-item">
+      <a href="images/illu2.jpg" data-lightbox="illustrations" data-title="Illustration vectorielle – Portrait abstrait">
+        <img src="illustrations/Nina Ricci.png" alt="Illustration 2">
+      </a>
+      <p class="caption">Nina Ricci</p>
+    </div>
+    <div class="gallery-item">
+      <a href="images/illu3.jpg" data-lightbox="illustrations" data-title="Design d'affiche – Concert Rock">
+        <img src="illustrations/Nina Ricci V2.png" alt="Illustration 3">
+      </a>
+      <p class="caption">Nina Ricci n°2</p>
+    </div>
+    <div class="gallery-item">
+      <a href="images/illu4.jpg" data-lightbox="illustrations" data-title="Visuel social media – Campagne solidaire">
+        <img src="illustrations/Photoshop-2eme Atelier.png" alt="Illustration 4">
+      </a>
+      <p class="caption">Visuel social media – Campagne solidaire</p>
+    </div>
+    <div class="gallery-item">
+      <a href="images/illu5.jpg" data-lightbox="illustrations" data-title="Couverture fictive de magazine">
+        <img src="illustrations/Ayo_Pochette_CD.jpg" alt="Illustration 5">
+      </a>
+      <p class="caption">Couverture fictive de magazine</p>
+    </div>
+    <div class="gallery-item">
+      <a href="images/illu6.jpg" data-lightbox="illustrations" data-title="Illustration poétique – Encre et texture">
+        <img src="illustrations/villes suspendues.jpg" alt="Illustration 6">
+      </a>
+      <p class="caption">Illustration poétique – Encre et texture</p>
+    </div>
+    <div class="gallery-item">
+      <a href="images/illu6.jpg" data-lightbox="illustrations" data-title="Illustration poétique – Encre et texture">
+        <img src="illustrations/visuel+coca+fin.jpg" alt="Illustration 6">
+      </a>
+      <p class="caption">Illustration poétique – Encre et texture</p>
+    </div>
+    
+  </section>
+-->
+
+  <section class="gallery-section">
+  <h2></h2>
+  <div class="gallery gallery-horizontal">
+    <div class="gallery-item">
+      <img src="illustrations/tour+eiffel AVANT-APRES.png" alt="Affiche voiture">
+      <p class="caption"></p>
+    </div>
+    <div class="gallery-item">
+      <img src="illustrations/Nike.jpg" alt="Affiche Nike">
+      <p class="caption">Affiche Nike</p>
+    </div>
+    <div class="gallery-item">
+      <img src="illustrations/Presentation Iphone.jpg" alt="iPhone">
+      <p class="caption">Présentation iPhone</p>
+    </div>
+    <div class="gallery-item">
+        <img src="illustrations/visuel+coca+fin.jpg" alt="Illustration 6">
+      <p class="caption">Coca Cola</p>
+    </div>
+    <div class="gallery-item">
+        <img src="illustrations/Nina Ricci.png" alt="Illustration 2">
+      <p class="caption">Nina Ricci</p>
+    </div>
+    <div class="gallery-item">
+        <img src="illustrations/Nina Ricci V2.png" alt="Illustration 3">
+      <p class="caption">Nina Ricci n°2</p>
+    </div>
+    <div class="gallery-item">
+        <img src="illustrations/villes suspendues.jpg" alt="Illustration 6">
+      <p class="caption">Villes suspendues</p>
+    </div>
+    <!-- Ajoute d'autres images horizontales ici -->
+  </div>
+</section>
+
+<section class="gallery-section">
+  <h2></h2>
+  <div class="gallery gallery-vertical">
+    <div class="gallery-item">
+      <img src="illustrations/danseuse.jpg" alt="Danseuse">
+      <p class="caption">Danseuse avec Stretch Pixel</p>
+    </div>
+    <div class="gallery-item">
+      <img src="illustrations/Ayo_Pochette_CD.jpg" alt="Ayo CD">
+      <p class="caption">Pochette CD</p>
+    </div>
+    <div class="gallery-item">
+      <img src="illustrations/affiche_voiture.jpg" alt="Illustration 1">
+      <p class="caption">Affiche - Voiture</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="illustrations/Photoshop-1er Atelier.png" alt="Illustration 1">
+      <p class="caption"></p>
+    </div>
+    <div class="gallery-item">
+      <img src="illustrations/tour_eiffel (Antan).png" alt="Illustration 1">
+      <p class="caption"></p>
+    </div>
+    <div class="gallery-item">
+      <img src="illustrations/Photoshop-2eme Atelier.png" alt="Illustration 1">
+      <p class="caption">Birdy Man</p>
+    </div>
+
+
+    <!-- Ajoute d'autres images verticales ici -->
+  </div>
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".gallery-item img");
+
+    images.forEach((img) => {
+      img.onload = function () {
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        if (aspectRatio > 1) {
+          img.classList.add("landscape");
+        } else {
+          img.classList.add("portrait");
+        }
+      };
+    });
+  });
+</script>
+
+</body>
+</html>

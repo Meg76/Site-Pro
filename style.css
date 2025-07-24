@@ -1,0 +1,477 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  padding-top: 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.main-nav {
+    background: #111;
+    padding: 0.5em 1em;
+  }
+
+  .main-nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+  }
+
+
+.has-submenu {
+  position: relative;
+}
+
+.has-submenu .submenu {
+  margin-top: 0.6rem; /* décalage visuel du sous-menu */
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* colle le sous-menu au lien */
+  left: 0;
+  background: #222;
+  padding: 0.5em 0;
+  list-style: none;
+  min-width: 200px;
+  z-index: 100;
+  margin-top: 0; /* on supprime le décalage qui crée un vide */
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.has-submenu > a {
+  padding-bottom: 0.6rem;  /* compense l'effet du sous-menu */
+}
+
+.submenu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: #444; /* couleur plus claire pour TOUS les liens du sous-menu */
+}
+
+  
+  .submenu:hover {
+    display: block;
+  }
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.nom-site {
+  font-weight: bold;
+  font-size: 1.2rem; /* ajuste selon ton design */
+}
+
+.photo-rond {
+  width: 300px;           /* ajuste selon ton besoin */
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;      /* pour remplir le cadre sans déformer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* optionnel, pour l'effet */
+}
+
+.logo-icon {
+  width: 30px;
+  height: auto;
+}
+
+.menu{
+  list-style: none;
+  display: flex;
+  gap: 2em; /* plus d’espace entre les liens */
+  margin: 0;
+  padding-left: 0rem; /* pousse le menu à droite */
+  padding-right: 2rem;
+  align-items: center;
+  font-weight: bold;
+}
+
+.menu a {
+ color: white; 
+ text-decoration: 
+ none; 
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 1rem;
+  vertical-align: middle;
+  font-weight: bold;
+  /* border: 1px solid red; */
+}
+
+.menu li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px; /* force tous à la même hauteur */
+}
+
+.submenu { display: none; position: absolute; top: 100%; left: 0; background: #222; list-style: none; padding: 0.5em; }
+.menu li:hover .submenu { display: block; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem; /* élargi l'espacement gauche/droite */
+  background: #000;
+  color: white;
+  border: 3px solid black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-weight: bold;
+}
+
+.section-zone {
+  background-color: #f0f0f0;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.section-zone h2 {
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: #000;
+  margin: 1rem auto 2rem;
+}
+
+.content-placeholder {
+  height: 150px;
+  background-color: #ddd;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+
+
+
+
+/* ===== SECTION À PROPOS (Bleu Minuit & Argent) ===== */
+
+.section-apropos {
+  background-color: #0b0c10;
+  color: #f8f8f8;
+  padding: 4rem 2rem;
+}
+
+.section-apropos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f8f8f8;
+}
+
+.section-apropos p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f8f8f8;
+}
+
+.section-apropos .btn {
+  background-color: #c0c0c0;
+  color: #0b0c10;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  border: none;
+}
+
+.section-apropos .btn:hover {
+  background-color: #1c1d22;
+  color: #f8f8f8;
+}
+
+
+
+
+
+/* ===== SECTION RÉALISATION VIDÉO (Bleu Minuit & Argent) ===== */
+
+.section-realisations {
+  background-color: #1c1d22;
+  color: #f8f8f8;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-realisations h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f8f8f8;
+}
+
+.section-realisations p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f8f8f8;
+}
+
+.section-realisations .btn {
+  background-color: #c0c0c0;
+  color: #0b0c10;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  border: none;
+}
+
+.section-realisations .btn:hover {
+  background-color: #f8f8f8;
+  color: #0b0c10;
+}
+
+
+
+
+/*PHOTOGRAPHIE*/
+
+.interet{
+
+    flex: 0 1 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.interet img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #555;
+}
+
+#bienvenu
+{
+    background: #fff;
+}
+#bienvenu .heading h2
+{
+  color: blue;
+}
+.carousel-control.left, .carousel-control.right
+{
+    background-image: none;
+    color: white;
+}
+.carousel-indicators
+{
+    bottom: 0px;
+}
+.carousel-indicators li
+{
+    border-color: blue;
+}
+.carousel-indicators li.active
+{
+    background-color: blue;
+}
+#myCarousel .item
+{
+    padding: 40px 30px;
+}
+#myCarousel .item h3
+{
+    color: blue;
+    font-style: italic;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.section-photographie {
+  background-color: #121319;
+  color: #f8f8f8;
+  padding: 4rem 2rem;
+}
+
+.section-photographie h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f8f8f8;
+}
+
+.section-photographie p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.section-photographie .btn {
+  background-color: #c0c0c0;
+  color: #0b0c10;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  border: none;
+}
+
+.section-photographie .btn:hover {
+  background-color: #1c1d22;
+  color: #f8f8f8;
+}
+
+
+/*Section Illustrations*/
+
+.section-illustrations {
+  background-color: #0b0c10;
+  color: #f8f8f8;
+  padding: 4rem 2rem;
+}
+
+.section-illustrations h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f8f8f8;
+}
+
+.section-illustrations p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.section-illustrations .btn {
+  background-color: #c0c0c0;
+  color: #0b0c10;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  border: none;
+}
+
+.section-illustrations .btn:hover {
+  background-color: #1c1d22;
+  color: #f8f8f8;
+}
+
+.section-illustrations img {
+  max-width: 90%;       /* Réduction à 90% */
+  height: auto;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.section-illustrations img:hover {
+  transform: scale(1.03);
+}
+
+
+
+.contact-section {
+  background-color: #1f2327;
+  color: white;
+}
+
+.contact-section a {
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+
+
+.contact-row {
+  align-items: flex-start; /* aligne les contenus en haut */
+}
+
+@media (max-width: 767px) {
+  .contact-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
