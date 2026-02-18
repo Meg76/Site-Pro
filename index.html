@@ -8,6 +8,7 @@
 <title>Megan Mortreux</title>
 <link href="style.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/></head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <body>
 
 <script>
@@ -25,7 +26,7 @@
 <header>
 <nav class="navbar">
 <div class="logo-container">
-  <img src="photos/logo.png" alt="Logo" class="logo">
+  <img src="photos/Mon logo.png" alt="Logo" class="logo">
   <span class="nom-site">MEGAN MORTREUX</span>
 </div>
 <ul class="menu">
@@ -47,16 +48,31 @@
 </nav>
 </header>
 <main>
+  <section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="videos/showreel.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>MEGAN MORTREUX</h1>
+    <p>Réalisatrice • Cadreuse/Monteuse • Motion Designer • Photographe</p>
+    <a href="#realisations" class="btn-hero">Découvrir mon univers</a>
+  </div>
+</section>
+
 <section class="section-apropos text-center">
 <div class="container">
-<h2 class="fw-bold mb-5">QUI SUIS-JE ?</h2>
+<!--<h2 class="fw-bold mb-5">Megan MORTREUX</h2>-->
 <div class="row align-items-center text-start">
 <div class="col-md-6 mb-4 mb-md-0 text-center">
 <img alt="Photo de moi" class="photo-rond" src="photos/moi.jpg" width="350" height="350"/>
 
 </div>
+
 <div class="col-md-6">
-<p class="lead">
+<p class="apropos-text">
           Je raconte des histoires en images.<br>
 
           Réalisatrice, cadreuse, monteuse, motion designer et photographe,
@@ -233,19 +249,6 @@
 
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.dropdown');
-    dropdown.addEventListener('mouseenter', function () {
-      const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(dropdown.querySelector('.dropdown-toggle'));
-      bsDropdown.show();
-    });
-    dropdown.addEventListener('mouseleave', function () {
-      const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(dropdown.querySelector('.dropdown-toggle'));
-      bsDropdown.hide();
-    });
-  });
-</script>
 
 
 
