@@ -1,115 +1,220 @@
-/* Structure générale section */
-.section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+/* ===============================
+   PALETTE CHALEUREUSE MARIAGE
+================================= */
+
+:root {
+  --bg-main: #0f0f0f;
+  --bg-header: #141210;
+  --text-main: #f4f1ea;
+  --text-soft: #cfc7b8;
+  --gold-accent: #c6a86e;
+  --gold-soft: rgba(198, 168, 110, 0.15);
 }
 
-header {
-  background-color: #141414;
-  border-bottom: 2px solid #343434;
-}
 
-.section-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  font-weight: bold;
-  color: #58a6ff;
-}
-
-/* Zone de texte d'introduction */
-.intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  font-size: 1.1em;
-  color: #333;
-}
-
-/* Vidéo centrée */
-.video-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.video-container video {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-}
-
-/* Titre de la vidéo */
-.video-title {
-  color: var(--accent-color);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-}
-
-/* Description sous la vidéo */
-.description {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.05em;
-  line-height: 1.6;
-  color: #444;
-  text-align: center;
-}
-
-.header {
-  text-align: center;
-  padding: 10px 20px 20px;
-  background-color: #11131a;
-}
-
+/* ===============================
+   BASE
+================================= */
 
 body {
-  background-color: #0d1117;
-  color: #c9d1d9;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-main);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
   margin: 0;
   padding: 0;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  font-weight: bold;
-  color: #58a6ff;
+
+/* ===============================
+   TYPOGRAPHIE CINÉMATOGRAPHIQUE
+================================= */
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
 }
 
-.intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  font-size: 1.1em;
-  color: #adbac7;
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-soft);
 }
+
+
+/* ===============================
+   NAVBAR CINÉMATOGRAPHIQUE
+================================= */
+
+.navbar {
+  background-color: #111 !important;
+  padding: 1rem 0;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 1.2rem;
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.dropdown-menu {
+  background-color: #1a1a1a;
+  border: none;
+  padding: 0.8rem 0;
+}
+
+.dropdown-item {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+  color: #ffffff;
+  padding-left: 1.8rem;
+}
+
+
+/* Logo rond */
+
+.navbar-logo {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+/* ===============================
+   HEADER CINÉMATOGRAPHIQUE
+================================= */
+
+header {
+ background: linear-gradient(
+    180deg,
+    #1a1a1a 0%,
+    #141414 60%,
+    #0f0f0f 100%
+  );
+  border-bottom: 1px solid rgba(198, 168, 110, 0.2);
+  padding: 100px 20px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Lumière dorée subtile */
+
+
+header::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(198, 168, 110, 0.15),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Titre animé */
+
+.section-title {
+  font-size: 3rem;
+  letter-spacing: 12px;
+  transition: letter-spacing 1.8s ease;
+  color: var(--text-main);
+}
+
+.section-title.tight {
+  letter-spacing: 4px;
+}
+
+.section-title span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+}
+
+.section-title span.reveal {
+  animation: letterReveal 0.6s ease forwards;
+}
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sous-titre */
+
+.header-subtitle {
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var(--gold-accent);
+}
+
+.header-subtitle.show {
+  animation: subtitleFade 1.2s ease forwards;
+}
+
+@keyframes subtitleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===============================
+   VIDÉO
+================================= */
 
 .video-container {
   display: flex;
   justify-content: center;
-  margin: 3rem 0;
+  margin: 80px 0 40px;
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
   max-width: 960px;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
+  box-shadow: 0 0 40px var(--gold-soft);
 }
 
 .video-wrapper iframe {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: none;
@@ -117,34 +222,111 @@ body {
 
 .video-title {
   text-align: center;
-  font-size: 1.8em;
-  margin: 20px 0;
-  color: #f0f6fc;
+  font-size: 1.8rem;
+  margin: 30px 0 15px;
+  color: var(--gold-accent);
+  letter-spacing: 2px;
 }
 
+
+/* ===============================
+   DESCRIPTION
+================================= */
+
 .description {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.05em;
-  line-height: 1.6;
-  color: #c9d1d9;
+  max-width: 850px;
+  margin: 0 auto 80px;
   text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-soft);
 }
+
+/* ===============================
+   SIGNATURE
+================================= */
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  display: block;
+  margin-top: 30px;
+  text-align: right;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+
+.signature::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold-accent);
+  margin-right: 10px;
+  vertical-align: middle;
+  opacity: 0.5;
+}
+
+
+/* ===============================
+   ANIMATION APPARITION
+================================= */
 
 .fade-in {
   opacity: 0;
-  animation: fadeIn ease 1.2s forwards;
-  animation-delay: 0.3s;
+  transform: translateY(15px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+
+
+.wedding-block {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  position: relative;
+}
+
+.wedding-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* halo lumière douce */
+
+.wedding-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(198, 168, 110, 0.08),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+}
+
+.wedding-block.visible::after {
+  opacity: 1;
+}
+
+
+
+#film-title {
+  color: #ebe4d8; !important;
+}
