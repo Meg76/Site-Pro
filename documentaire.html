@@ -5,24 +5,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Documentaire</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="documentaire.css">
 </head>
 
 <body>
-   <header class="text-center bg-dark text-light py-5">
-    <h1 class="section-title">DOCUMENTAIRES</h1>
-    <p class="lead">Réaliser un documentaire, c’est aller à la rencontre de vérités, de parcours de vie, d’émotions brutes.<br>À chaque projet, je m’attache à capter l’authenticité des histoires racontées, à travers des regards, des silences, des gestes simples mais puissants.<br> Mon approche repose sur l’écoute, la discrétion et une grande attention portée à l’humain.<br> Chaque film devient alors une immersion sincère dans un univers unique, pour transmettre, sensibiliser, ou simplement émouvoir</p>
-  </header>
+    <div class="site-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid px-4 px-lg-5">
+      
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="photos/Mon logo.png" alt="Logo Megan Mortreux" class="navbar-logo">
+      </a>
 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Accueil</a>
+          </li>
+
+          <!-- FILMS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="filmsDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Réalisations
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="court-metrage.html">Court-métrage</a></li>
+              <li><a class="dropdown-item" href="documentaire.html">Documentaire</a></li>
+              <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
+              <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
+              <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
+            </ul>
+          </li>
+
+          <!-- MOTION DESIGN -->
+          <li class="nav-item">
+            <a class="nav-link" href="motion-design.html">Motion Design</a>
+          </li>
+
+         <!-- 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="motionDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Motion Design
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="motion-2d.html">2D</a></li>
+              <li><a class="dropdown-item" href="motion-3d.html">3D</a></li>
+            </ul>
+          </li>
+          -->
+
+          <!-- POST PRODUCTION -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="postDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Post Production
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
+              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="photographie.html">Photographie</a>
+          </li>
+
+          <!-- EXPLORATIONS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="explorationsDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Illustrations
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="creations-visuelles.html">Créations visuelles</a></li>
+              <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<br>
+<br>
+   <header class="text-center bg-dark text-light py-5">
+    <br>
+    <h1 class="section-title header-title" id="film-title">DOCUMENTAIRES</h1>
+    <p class="lead">Raconter le réel, sans artifice.
+Aller à la rencontre d’histoires singulières,
+capter les silences, les regards, les instants vrais.
+Chaque film est une immersion humaine.</p>
+  </header>
+  <h3 class="video-title">L'art pour s'exprimer</h3>
   <div class="video-container">
     <!-- Ta vidéo YouTube intégrée -->
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9KbiF9jEisU?si=M6W1LOuW3CUMLPI6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
-  <h3 class="video-title">L'art pour s'exprimer</h3>
   <div class="description">
-    <p>À travers l'art et les paroles, les adolescents de l'IME nous partagent leurs émotions et appréhensions face au regard de la société.Ce documentaire a été réalisé en partenariat avec l'IME Arc en Ciel de Toulouse</p>
+    <p>
+    À travers l’art et la parole, des adolescents de l’IME Arc-en-Ciel de Toulouse
+    livrent leurs émotions face au regard de la société.
+  </p>
+  <p>
+    Un film intime, entre fragilité et affirmation de soi.
+  </p>
   </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const title = document.getElementById("film-title");
+  const subtitle = document.querySelector(".header-subtitle");
+
+  if (!title) return;
+
+  const text = title.textContent;
+  title.textContent = "";
+
+  text.split("").forEach((letter, index) => {
+    const span = document.createElement("span");
+    span.textContent = letter === " " ? "\u00A0" : letter;
+    title.appendChild(span);
+
+    setTimeout(() => {
+      span.classList.add("reveal");
+    }, index * 80);
+  });
+
+  const totalDuration = text.length * 80;
+
+  setTimeout(() => {
+    title.classList.add("tight");
+  }, totalDuration + 200);
+
+  if (subtitle) {
+    setTimeout(() => {
+      subtitle.classList.add("show");
+    }, totalDuration + 250);
+  }
+
+});
+
+const video = document.querySelector(".video-container");
+const videoTitle = document.querySelector(".video-title");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+if (videoTitle) observer.observe(videoTitle);
+if (video) observer.observe(video);
+
+</script>
 
 </body>
 </html>
