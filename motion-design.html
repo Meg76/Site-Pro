@@ -5,17 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Motion Design</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="motion-design.css">
 </head>
 <body>
+  <div class="site-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid px-4 px-lg-5">
+      
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="photos/Mon logo.png" alt="Logo Megan Mortreux" class="navbar-logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Accueil</a>
+          </li>
+
+          <!-- FILMS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="filmsDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Réalisations
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="court-metrage.html">Court-métrage</a></li>
+              <li><a class="dropdown-item" href="documentaire.html">Documentaire</a></li>
+              <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
+              <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
+              <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
+            </ul>
+          </li>
+
+          <!-- MOTION DESIGN -->
+          <li class="nav-item">
+            <a class="nav-link" href="motion-design.html">Motion Design</a>
+          </li>
+
+         <!-- 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="motionDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Motion Design
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="motion-2d.html">2D</a></li>
+              <li><a class="dropdown-item" href="motion-3d.html">3D</a></li>
+            </ul>
+          </li>
+          -->
+
+          <!-- POST PRODUCTION -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="postDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Post Production
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
+              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="photographie.html">Photographie</a>
+          </li>
+
+          <!-- EXPLORATIONS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="explorationsDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Illustrations
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="creations-visuelles.html">Créations visuelles</a></li>
+              <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<br>
+<br>
   <header class="text-center bg-dark text-light py-5">
-    <h1 class="section-title">MOTION DESIGN</h1>
-    <p class="lead">Découvrez une sélection de mes projets d'animation et de design en mouvement.</p>
+    <br>
+    <h1 class="section-title header-title" id="film-title">MOTION DESIGN</h1>
+    <p class="lead">Donner du mouvement aux idées. Structurer le rythme. Créer l’impact.</p>
   </header>
 
  <section class="showreel fade-in text-center">
   <h2>Showreel</h2>
-  <p class="section-intro">Un aperçu dynamique de mes travaux en animation et design graphique.</p>
+  <p class="section-intro">Une synthèse visuelle de mon univers en mouvement.</p>
   <div class="video-container">
     <video autoplay muted loop playsinline controls>
       <source src="videos/motion design/Showreel.mp4" type="video/mp4">
@@ -29,9 +124,7 @@
     <div class="video-grid">
       <div class="youtube-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/r_GDnakUsyY?si=JpQjOnfxE1raChM_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p>Générique Inframonde <br><br>Voici le générique que j’ai conçu dans le cadre de mon projet de fin d’études en motion design.
-Inframonde est une série de science-fiction fictive, inspirée de l’univers de X-Files, mêlant enquête paranormale, critique sociale et esthétique réaliste.
-Le générique s’appuie sur une direction artistique minimaliste et clinique, avec une montée en tension progressive où l’étrange s’insinue lentement dans le réel.</p>
+       
       </div>
 <!--
       <div class="video-card">
@@ -40,10 +133,16 @@ Le générique s’appuie sur une direction artistique minimaliste et clinique, 
       </div>
     </div>
 -->
+  </div>
+      <p>Générique Inframonde <br><br>Générique conçu pour mon projet de fin d’études.
+Inframonde est une série de science-fiction fictive, inspirée de l’univers X-Files.
+Une direction artistique minimaliste et clinique, où l’étrange s’insinue progressivement dans le réel.</p>
+      <div>
   </section>
 
 <section class="motion-section">
   <h2>Projet HUD</h2>
+  <p>Interfaces, tracking et compositions inspirées des univers sci-fi.</p>
   <div class="video-grid">
 
     <div class="video-card">
@@ -91,6 +190,7 @@ Le générique s’appuie sur une direction artistique minimaliste et clinique, 
 
 <section class="motion-section">
   <h2>Animation Logo</h2>
+  <p>Identités visuelles animées, pensées pour marquer dès les premières secondes.</p>
   <div class="video-grid">
 
     <div class="video-card">
@@ -119,6 +219,7 @@ Le générique s’appuie sur une direction artistique minimaliste et clinique, 
 
 <section class="motion-section">
   <h2>Animation Texte</h2>
+  <p>Travail typographique et rythmique autour du mouvement.</p>
   <div class="video-grid">
 
     <div class="video-card">
@@ -142,6 +243,7 @@ Le générique s’appuie sur une direction artistique minimaliste et clinique, 
 
 <section class="motion-section">
   <h2>Expérimentations visuelles</h2>
+  <p>Explorations graphiques et recherches visuelles en mouvement.</p>
   <div class="video-grid">
 
     <div class="video-card">
@@ -162,6 +264,42 @@ Le générique s’appuie sur une direction artistique minimaliste et clinique, 
 
   </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const title = document.getElementById("film-title");
+  const subtitle = document.querySelector(".header-subtitle");
+
+  if (!title) return;
+
+  const text = title.textContent;
+  title.textContent = "";
+
+  text.split("").forEach((letter, index) => {
+    const span = document.createElement("span");
+    span.textContent = letter === " " ? "\u00A0" : letter;
+    title.appendChild(span);
+
+    setTimeout(() => {
+      span.classList.add("reveal");
+    }, index * 80);
+  });
+
+  const totalDuration = text.length * 80;
+
+  setTimeout(() => {
+    title.classList.add("tight");
+  }, totalDuration + 200);
+
+  if (subtitle) {
+    setTimeout(() => {
+      subtitle.classList.add("show");
+    }, totalDuration + 250);
+  }
+
+});
+</script>
 
 
 </body>
