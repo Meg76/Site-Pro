@@ -5,13 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Court Métrage</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="court-metrage.css">
 </head>
 
 <body>
+     <div class="site-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid px-4 px-lg-5">
+      
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="photos/Mon logo.png" alt="Logo Megan Mortreux" class="navbar-logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Accueil</a>
+          </li>
+
+          <!-- FILMS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="filmsDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Réalisations
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="court-metrage.html">Court-métrage</a></li>
+              <li><a class="dropdown-item" href="documentaire.html">Documentaire</a></li>
+              <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
+              <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
+              <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
+            </ul>
+          </li>
+
+          <!-- MOTION DESIGN -->
+          <li class="nav-item">
+            <a class="nav-link" href="motion-design.html">Motion Design</a>
+          </li>
+
+         <!-- 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="motionDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Motion Design
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="motion-2d.html">2D</a></li>
+              <li><a class="dropdown-item" href="motion-3d.html">3D</a></li>
+            </ul>
+          </li>
+          -->
+
+          <!-- POST PRODUCTION -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="postDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Post Production
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
+              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="photographie.html">Photographie</a>
+          </li>
+
+          <!-- EXPLORATIONS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="explorationsDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Illustrations
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="creations-visuelles.html">Créations visuelles</a></li>
+              <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<br>
+<br>
   <header class="text-center bg-dark text-light py-5">
-    <h1 class="section-title">COURT-MÉTRAGE</h1>
-    <p class="lead">Découvrez une sélection des courts-métrages que j'ai réalisé.</p>
+    <br>
+    <h1 class="section-title header-title" id="film-title">COURT-MÉTRAGE</h1>
+    <p class="lead">Découvrez mes courts-métrages et univers narratifs.</p>
   </header>
   <h3 class="video-title">Nous sommes une</h3>
   <div class="video-container">
@@ -22,13 +117,29 @@
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     </iframe>
   </div>
-  <div class="description" style="color: white;">
-    <p>Ce court-métrage s’adresse à toutes les personnes ayant perdu un être cher. À travers l’histoire d’Anna, une jeune fille en deuil de sa sœur jumelle Alice, je veux explorer l’impact du deuil sur nos rêves et notre façon d’avancer.
-En mettant en avant le lien profond entre Anna et Alice, j’illustre comment les souvenirs et l’amour inconditionnel peuvent être une source de force, même dans les moments les plus sombres. Alice, présente uniquement dans les pensées d’Anna, symbolise ce soutien invisible qui nous guide et nous inspire au quotidien.
-Le parcours d’Anna, entre doutes et espoirs, reflète un thème universel : la résilience et la persévérance face à l’épreuve. 
-Mon souhait est d’offrir une histoire émouvante et inspirante, qui rappelle l’importance de croire en soi et d’honorer ceux qui nous ont quittés.
-Visuellement, j’ai choisi une palette de couleurs évolutive : des tons froids au départ, pour exprimer la solitude et l’incertitude d’Anna, qui s’éclaircissent progressivement vers des teintes plus chaleureuses, symbolisant sa transformation et sa montée en confiance. La musique suivra cette même progression émotionnelle.
-Avec ce film, je cherche à capter la force de l’amour, de la mémoire et de la détermination dans le processus du deuil et de la quête de soi.</p>
+  <div class="film-roles">
+  <h4>Rôles sur le projet</h4>
+  <p>Réalisation, écriture du scénario, montage, étalonnage et VFX.</p>
+</div>
+
+  <div class="description">
+    <p>
+      Synopsis<br>
+      Nous sommes une s’adresse à celles et ceux qui ont perdu un être cher.<br>
+      À travers Anna, jeune fille confrontée au deuil de sa sœur jumelle Alice, le film explore la manière dont l’absence transforme nos rêves et notre façon d’avancer.<br>
+      <br>
+      Intention<br>
+      En mettant en lumière le lien profond qui unit Anna et Alice, je cherche à montrer comment les souvenirs et l’amour peuvent devenir une force invisible.<br>
+      Alice, présente uniquement dans les pensées d’Anna, incarne ce soutien silencieux qui continue de nous guider malgré l’absence.<br>
+      <br>
+      Thématique<br>
+      Le parcours d’Anna, entre fragilité et espoir, évoque la résilience face à l’épreuve.<br>
+      Le film interroge notre capacité à honorer ceux qui nous ont quittés tout en continuant à croire en nous.<br>
+      <br>
+      Direction artistique<br>
+      Visuellement, le film évolue d’une palette froide vers des teintes plus chaleureuses, traduisant la transformation intérieure d’Anna.<br>
+      La musique accompagne cette progression émotionnelle, amplifiant le passage de l’ombre vers la lumière.<br>
+    </p>
   </div>
 
   <!-- Nouveau bouton
@@ -40,6 +151,7 @@ Avec ce film, je cherche à capter la force de l’amour, de la mémoire et de l
 
 </section>
 
+<!--
 <section class="court-metrage">
   <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/watch?v=bZIR-ZoZZXQ" 
@@ -60,7 +172,7 @@ Ce projet rend hommage aux grandes figures féminines du cinéma, tout en aborda
    </div>
 </section>
 
-<!--
+
 <section class="court-metrage">
 
   <div class="video-container">
@@ -82,5 +194,40 @@ Avec mon équipe, nous avons voulu recréer l’ambiance des films d’aventure 
 </section>
 
 -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const title = document.getElementById("film-title");
+  const subtitle = document.querySelector(".header-subtitle");
+
+  if (!title) return;
+
+  const text = title.textContent;
+  title.textContent = "";
+
+  text.split("").forEach((letter, index) => {
+    const span = document.createElement("span");
+    span.textContent = letter === " " ? "\u00A0" : letter;
+    title.appendChild(span);
+
+    setTimeout(() => {
+      span.classList.add("reveal");
+    }, index * 80);
+  });
+
+  const totalDuration = text.length * 80;
+
+  setTimeout(() => {
+    title.classList.add("tight");
+  }, totalDuration + 200);
+
+  if (subtitle) {
+    setTimeout(() => {
+      subtitle.classList.add("show");
+    }, totalDuration + 250);
+  }
+
+});
+</script>
 </body>
 </html>
