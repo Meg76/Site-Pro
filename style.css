@@ -10,11 +10,13 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  padding-top: 80px;
-  background: #000;
+  padding-top: 80px; /* pour la navbar fixed */
+  background: #0b0c10;
   color: white;
   font-weight: 300;
+  transition: background 1s ease;
 }
+
 
 
 /* ===============================
@@ -41,9 +43,12 @@ h1, h2, h3 {
 }
 
 .section-apropos h2,
-.section-realisations h2 {
-  font-size: 2.8rem;
+.section-realisations h2,
+.section-photographie h2,
+.section-illustrations h2 {
+  font-size: 2.5rem;
   letter-spacing: 2px;
+  margin-bottom: 2rem;
 }
 
 p {
@@ -52,104 +57,79 @@ p {
 }
 
 
-
 /* ===============================
-   NAVBAR
+   NAVBAR CINÉMATOGRAPHIQUE (Bootstrap)
 ================================= */
-
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-  background: #000;
-  color: white;
-  width: 100%;
+  background-color: #111 !important;
+  padding: 1rem 0;
+  transition: background 0.3s ease;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #ffffff !important;
 }
 
-.logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
+.navbar-nav .nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 1.2rem;
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: color 0.3s ease;
 }
 
-.nom-site {
-  font-weight: bold;
-  font-size: 1.2rem;
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important;
 }
 
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  font-weight: bold;
+/* Dropdown */
+
+.dropdown-menu {
+  background-color: #1a1a1a;
+  border: none;
+  padding: 0.8rem 0;
+  margin-top: 0.8rem;
 }
 
-.menu li {
-  position: relative;
-  height: 50px;
-  display: flex;
-  align-items: center;
+.dropdown-item {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  padding: 0 1rem;
-  transition: opacity 0.3s ease;
+.dropdown-item:hover {
+  background-color: transparent;
+  color: #ffffff;
+  padding-left: 1.8rem;
 }
 
-.menu a:hover {
-  opacity: 0.7;
+
+/* Logo navbar rond */
+
+.navbar-logo {
+  height: 45px;
+  width: 45px;              /* IMPORTANT : largeur = hauteur */
+  object-fit: cover;        /* évite la déformation */
+  border-radius: 50%;       /* rend parfaitement rond */
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
 }
 
-/* ===============================
-   SUBMENU
-================================= */
-
-.has-submenu {
-  position: relative;
+.navbar-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #222;
-  list-style: none;
-  padding: 0.5rem 0;
-  min-width: 180px;
-}
 
-.submenu li a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
-}
-
-.submenu li a:hover {
-  background-color: #444;
-}
-
-.has-submenu:hover .submenu {
-  display: block;
-}
 
 /* ===============================
    GLOBAL BUTTON
@@ -171,6 +151,7 @@ header {
   background: #333;
 }
 
+
 /* ===============================
    SECTION BASE STYLE
 ================================= */
@@ -178,6 +159,7 @@ header {
 section {
   padding: 4rem 2rem;
 }
+
 
 /* ===============================
    SECTION À PROPOS
@@ -187,26 +169,6 @@ section {
   background-color: #0b0c10;
   color: #f8f8f8;
   text-align: center;
-}
-
-.section-apropos h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.section-apropos p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.section-apropos .btn {
-  background-color: #c0c0c0;
-  color: #0b0c10;
-}
-
-.section-apropos .btn:hover {
-  background-color: #1c1d22;
-  color: #f8f8f8;
 }
 
 .photo-rond {
@@ -225,104 +187,336 @@ section {
   margin: 0 auto;
 }
 
-.apropos-text strong {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-
 /* ===============================
-   SECTION RÉALISATIONS
+   MOTION DESIGN
 ================================= */
 
-.section-realisations {
+.section-motion {
+  background: #0f0f0f;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.motion-title {
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.motion-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-video video {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  display: block;
+}
+
+.motion-content {
+  max-width: 700px;
+  margin: 3rem auto 0;
+}
+
+.motion-content p {
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.motion-btn {
+  border: 1px solid white;
+  padding: 0.6rem 1.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.motion-btn:hover {
+  background: white;
+  color: black;
+}
+
+.motion-video {
+  position: relative;
+}
+
+.motion-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+
+/* ===============================
+   SECTION POST PRODUCTION
+================================= */
+
+.section-post-production {
   background-color: #1c1d22;
   color: #f8f8f8;
   text-align: center;
 }
 
-.section-realisations h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.section-realisations .btn {
+.section-post-production .btn {
   background-color: #c0c0c0;
   color: #0b0c10;
 }
 
-.section-realisations .btn:hover {
+.section-post-production .btn:hover {
   background-color: #f8f8f8;
   color: #0b0c10;
 }
 
+
 /* ===============================
-   SECTION PHOTOGRAPHIE
+   SECTION PHOTOGRAPHIE - FILM STILLS
 ================================= */
 
 .section-photographie {
-  background-color: #121319;
-  color: #f8f8f8;
+  background: #0b0c10;
+  padding: 8rem 2rem;
   text-align: center;
 }
 
-.section-photographie h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+.photo-grid {
+  max-width: 1200px;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
 }
 
-.section-photographie .btn {
-  background-color: #c0c0c0;
-  color: #0b0c10;
+.photo-large {
+  grid-row: span 2;
+  position: relative;
+  overflow: hidden;
 }
 
-.section-photographie .btn:hover {
-  background-color: #1c1d22;
-  color: #f8f8f8;
+.photo-small {
+  position: relative;
+  overflow: hidden;
 }
 
-.carousel-item img {
+.photo-grid img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  transition: transform 0.8s ease;
+  display: block;
+}
+
+/* Overlay cinématographique */
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.photo-overlay span {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* Hover */
+
+.photo-large:hover img,
+.photo-small:hover img {
+  transform: scale(1.05);
+}
+
+.photo-large:hover .photo-overlay {
+  opacity: 1;
+}
+
+/* Bouton */
+
+.photo-btn-container {
+  margin-top: 3rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .photo-large {
+    grid-row: span 1;
+  }
+}
+
+.photo-large {
+  aspect-ratio: 16 / 9.7;
+}
+
+.photo-small {
+  aspect-ratio: 16 / 9;
+}
+
+/* ROTATION DOUCE */
+
+.photo-rotator {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-rotator img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  filter: saturate(85%) contrast(105%);
+  transition: opacity 2.5s ease-in-out, filter 0.6s ease; /* plus doux */
+}
+
+.photo-rotator img.active {
+  opacity: 1;
+  animation: slowZoom 8s ease-in-out forwards;
+}
+
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+
+.photo-rotator:hover img.active {
+  filter: saturate(100%) contrast(110%);
 }
 
 /* ===============================
-   SECTION ILLUSTRATIONS
+   SECTION ILLUSTRATIONS - ÉDITORIAL
 ================================= */
 
 .section-illustrations {
-  background-color: #0b0c10;
-  color: #f8f8f8;
+  background: #111217;
+  padding: 5rem 2rem;
   text-align: center;
 }
 
-.section-illustrations h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+.illustrations-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #aaa;
+  margin-top: -1rem;
+  margin-bottom: 4rem;
 }
 
-.section-illustrations .btn {
-  background-color: #c0c0c0;
-  color: #0b0c10;
-}
-
-.section-illustrations .btn:hover {
-  background-color: #1c1d22;
-  color: #f8f8f8;
-}
-
-.section-illustrations img {
-  max-width: 90%;
-  transition: transform 0.3s ease;
+.illustrations-layout {
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 3rem;
 }
 
-.section-illustrations img:hover {
-  transform: scale(1.03);
+.illustration-large {
+  grid-row: span 2;
+  position: relative;
 }
+
+.illustration-small {
+  position: relative;
+}
+
+.illustration-offset {
+  transform: translateY(40px);
+}
+
+/* Images */
+
+.illustrations-layout img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Hover subtil */
+
+.illustrations-layout img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+}
+
+/* Bouton */
+
+.illustration-btn {
+  margin-top: 5rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .illustrations-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .illustration-large {
+    grid-row: span 1;
+  }
+
+  .illustration-offset {
+    transform: none;
+  }
+}
+
+/* Effet lumière au survol */
+
+.illustrations-layout div {
+  position: relative;
+  overflow: hidden;
+}
+
+.illustrations-layout div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.8s ease;
+}
+
+.illustrations-layout div:hover::after {
+  left: 130%;
+}
+
 
 /* ===============================
    CONTACT
@@ -340,21 +534,6 @@ section {
 
 .contact-section a:hover {
   text-decoration: underline;
-}
-
-/* ===============================
-   RESPONSIVE
-================================= */
-
-@media (max-width: 768px) {
-  .menu {
-    gap: 1rem;
-  }
-
-  .photo-rond {
-    width: 220px;
-    height: 220px;
-  }
 }
 
 
@@ -425,9 +604,18 @@ section {
   color: black;
 }
 
-/* Responsive */
+
+/* ===============================
+   RESPONSIVE
+================================= */
 
 @media (max-width: 768px) {
+
+  .photo-rond {
+    width: 220px;
+    height: 220px;
+  }
+
   .hero-content h1 {
     font-size: 2.2rem;
   }
@@ -435,4 +623,195 @@ section {
   .hero-content p {
     font-size: 1rem;
   }
+}
+
+
+/* ===============================
+   NOUVELLE SECTION RÉALISATIONS
+================================= */
+
+.section-realisations {
+  background: #111;
+  padding: 5rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 4rem;
+}
+
+/* GRAND PROJET */
+
+.featured-project {
+  margin-bottom: 4rem;
+}
+
+.project-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.project-link video {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease;
+}
+
+.project-overlay h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.project-btn {
+  border: 1px solid white;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* PETITS BLOCS */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.project-item video {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* HOVER EFFECT */
+
+.project-link:hover video {
+  transform: scale(1.05);
+}
+
+.project-link:hover .project-overlay {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.project-link:hover .project-btn {
+  opacity: 1;
+}
+
+
+/* ===============================
+   ANIMATION SCROLL RÉALISATIONS
+================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Petit décalage pour les blocs secondaires */
+.projects-grid .project-item {
+  transition-delay: 0.1s;
+}
+
+.projects-grid .project-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.projects-grid .project-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.projects-grid .project-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+
+/* ===============================
+   ANIMATION TITRE SECTION
+================================= */
+
+.section-title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+  letter-spacing: 4px;
+}
+
+
+.section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section {
+  position: relative;
+}
+
+/* Dégradé BAS */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.6) 100%
+  );
+  pointer-events: none;
+}
+
+/* Dégradé HAUT (plus subtil) */
+.section::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.4) 100%
+  );
+  pointer-events: none;
 }
