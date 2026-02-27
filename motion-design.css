@@ -1,21 +1,166 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #0d1117;
-  color: #f0f0f0;
+/* ===============================
+   MOTION DESIGN - FUTURISTE HUD
+================================= */
+
+:root {
+  --bg-deep: #07090d;
+  --bg-panel: #0f141b;
+  --accent: #00f0ff;
+  --accent-soft: rgba(0, 240, 255, 0.2);
+  --text-main: #e6f1ff;
+  --text-soft: #8b949e;
 }
 
+body {
+  background: radial-gradient(circle at top, #0b1118 0%, #07090d 60%);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* ===============================
+   TYPOGRAPHIE CINÉMATOGRAPHIQUE
+================================= */
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+
+/* ===============================
+   NAVBAR CINÉMATOGRAPHIQUE
+================================= */
+
+.navbar {
+  background-color: #111 !important;
+  padding: 1rem 0;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 1.2rem;
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.dropdown-menu {
+  background-color: #1a1a1a;
+  border: none;
+  padding: 0.8rem 0;
+}
+
+.dropdown-item {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+  color: #ffffff;
+  padding-left: 1.8rem;
+}
+
+
+/* Logo rond */
+
+.navbar-logo {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+
+/* Titre animé */
+
+.section-title {
+  font-size: 3rem;
+  letter-spacing: 12px;
+  transition: letter-spacing 1.8s ease;
+  color: var(--text-main);
+}
+
+.section-title.tight {
+  letter-spacing: 4px;
+}
+
+.section-title span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+}
+
+.section-title span.reveal {
+  animation: letterReveal 0.6s ease forwards;
+}
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
 header {
-  background-color: #141414;
-  border-bottom: 2px solid #343434;
+  background: linear-gradient(to bottom, #0b1118, #07090d);
+  border-bottom: 1px solid var(--accent-soft);
+  padding: 6rem 2rem 4rem;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
 }
 
 .section-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  font-weight: bold;
-  color: #58a6ff;
+  font-size: 3rem;
+  letter-spacing: 12px;
+  color: var(--text-main);
+}
+
+.section-title span.reveal {
+  animation: letterReveal 0.6s ease forwards;
+  text-shadow: 0 0 8px var(--accent-soft);
 }
 
 h1 {
@@ -35,11 +180,12 @@ section {
   margin: auto;
 }
 
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #58a6ff;
+.motion-section h2 {
+  color: var(--accent);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
 }
 
 .video-container,
@@ -77,12 +223,38 @@ h2 {
 }
 
 .video-card {
-  background-color: #161b22;
-  padding: 1rem;
-  border-radius: 8px;
+  background: var(--bg-panel);
+  padding: 1.2rem;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  border: 1px solid #30363d;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    var(--accent-soft) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 25px var(--accent-soft);
+}
+
+.video-card:hover::before {
+  opacity: 0.2;
 }
 
 .video-card p {
