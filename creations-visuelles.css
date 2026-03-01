@@ -1,13 +1,125 @@
+/* ===============================
+   BASE
+================================= */
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background-color: #16171c; /* Fond plus doux que #0b0c10 */
+  background-color: #16171c; 
+  font-family: 'Inter', sans-serif;
   color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===============================
+   TYPOGRAPHIE CINÉMATOGRAPHIQUE
+================================= */
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+
+/* ===============================
+   NAVBAR CINÉMATOGRAPHIQUE
+================================= */
+
+.navbar {
+  background-color: #111 !important;
+  padding: 1rem 0;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 1.2rem;
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.dropdown-menu {
+  background-color: #1a1a1a;
+  border: none;
+  padding: 0.8rem 0;
+}
+
+.dropdown-item {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+  color: #ffffff;
+  padding-left: 1.8rem;
+}
+
+
+/* Logo rond */
+
+.navbar-logo {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Titre animé */
+
+.section-title {
+  font-size: 3rem;
+  letter-spacing: 12px;
+  transition: letter-spacing 1.8s ease;
+  color: var(--text-main);
+}
+
+.section-title.tight {
+  letter-spacing: 4px;
+}
+
+.section-title span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+}
+
+.section-title span.reveal {
+  animation: letterReveal 0.6s ease forwards;
+}
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 header {
-  background-color: #141414;
-  border-bottom: 2px solid #343434;
+  background: linear-gradient(to bottom, #141414, #16171c);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .section-title {
@@ -15,7 +127,7 @@ header {
   font-size: 2.5em;
   margin-bottom: 30px;
   font-weight: bold;
-  color: #58a6ff;
+  
 }
 
 h1 {
@@ -72,7 +184,6 @@ p {
 }
 
 
-
 /* Portrait */
 .gallery-item img.portrait {
   aspect-ratio: 3 / 4;
@@ -93,10 +204,6 @@ p {
   font-size: 1rem;
   color: #c0c0c0;
 }
-
-
-
-
 
 /* Sections distinctes pour les formats */
 .gallery-horizontal,
@@ -128,15 +235,6 @@ p {
   aspect-ratio: 3 / 4;
 }
 
-
-
-
-
-
-
-
-
-
 .gallery-section {
   margin: 60px auto;
   max-width: 1200px;
@@ -152,36 +250,29 @@ p {
   padding-bottom: 10px;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
 .gallery-item {
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05);
+.gallery-item:hover::before {
+  opacity: 1;
 }
 
-.caption {
-  margin-top: 10px;
-  text-align: center;
-  color: #ccc;
-  font-size: 0.95rem;
+.gallery-featured {
+  justify-content: center;
+  display: flex; /*Image au centre)*/
+}
+
+.gallery-featured .gallery-item {
+  max-width: 260px; /* ajuste entre 220 et 300 selon ton goût */
 }
