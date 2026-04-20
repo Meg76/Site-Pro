@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Documentaire</title>
+  <link rel="icon" type="image/png" href="photos/Mon logo(2).png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="documentaire.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -43,6 +45,8 @@
               <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
               <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
               <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
+              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
+              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
             </ul>
           </li>
 
@@ -64,18 +68,6 @@
           </li>
           -->
 
-          <!-- POST PRODUCTION -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="postDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Post Production
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
-              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
-            </ul>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link" href="photographie.html">Photographie</a>
           </li>
@@ -91,6 +83,10 @@
               <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
             </ul>
           </li>
+             <!-- SERVICES -->
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
@@ -105,24 +101,27 @@
    <header class="text-center bg-dark text-light py-5">
     <br>
     <h1 class="section-title header-title" id="film-title">DOCUMENTAIRES</h1>
+    <div class="doc-divider"></div>
     <p class="lead">Raconter le réel, sans artifice.
 Aller à la rencontre d’histoires singulières,
 capter les silences, les regards, les instants vrais.
 Chaque film est une immersion humaine.</p>
   </header>
   <h3 class="video-title">L'art pour s'exprimer</h3>
+  <p class="film-meta">
+    IME Arc-en-Ciel Toulouse — 2025 — 8 min
+  </p>
   <div class="video-container">
-    <!-- Ta vidéo YouTube intégrée -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9KbiF9jEisU?si=M6W1LOuW3CUMLPI6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/9KbiF9jEisU?si=M6W1LOuW3CUMLPI6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
   </div>
   <div class="description">
-    <p>
-    À travers l’art et la parole, des adolescents de l’IME Arc-en-Ciel de Toulouse
-    livrent leurs émotions face au regard de la société.
-  </p>
-  <p>
+
+    <span> À travers l’art et la parole, des adolescents de l’IME Arc-en-Ciel de Toulouse livrent leurs émotions face au regard de la société.</span>
+  <span>
     Un film intime, entre fragilité et affirmation de soi.
-  </p>
+  </span>
   </div>
 </section>
 
@@ -175,7 +174,27 @@ const observer = new IntersectionObserver(entries => {
 if (videoTitle) observer.observe(videoTitle);
 if (video) observer.observe(video);
 
+
+const videos = document.querySelectorAll(".video-wrapper");
+
+const videoObserver = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+},{
+threshold:0.3
+});
+
+videos.forEach(video => videoObserver.observe(video));
+
+
+
+
 </script>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
