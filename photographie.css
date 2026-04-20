@@ -96,13 +96,60 @@ body {
   color: #f5f5f5;
 }
 
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background:radial-gradient(
+circle at center,
+rgba(0,0,0,0) 55%,
+rgba(0,0,0,0.35) 100%
+);
+z-index:-1;
+}
+
+
 header {
-  background-color: #0b0c10;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0e0e0e 70%);
   border-bottom: 1px solid #1f1f1f;
   position: relative;
   overflow: hidden;
 }
 
+header::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+opacity:0.15;
+pointer-events:none;
+}
+
+.header-title{
+position:relative;
+z-index:2;
+}
+
+.header-title::before{
+content:"";
+position:absolute;
+top:50%;
+left:50%;
+width:420px;
+height:140px;
+transform:translate(-50%,-50%);
+background:radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+filter:blur(40px);
+z-index:-1;
+pointer-events:none;
+}
 
 .section-title {
   font-size: 2.8rem;
@@ -112,9 +159,21 @@ header {
 
 .photo-box {
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  background: #111;
+  box-shadow: 
+    0 8px 20px rgba(0,0,0,0.5),
+    0 1px 0 rgba(255,255,255,0.04) inset;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.row:hover .photo-box img{
+filter: brightness(0.6);
+transition: filter 0.4s ease;
+}
+
+.row .photo-box:hover img{
+filter: brightness(1);
 }
 
 .photo-box img {
@@ -127,6 +186,13 @@ header {
 .photo-box:hover img {
   transform: scale(1.05);
   filter: brightness(1.1);
+}
+
+.photo-box:hover{
+transform:translateY(-6px);
+box-shadow:
+  0 18px 40px rgba(0,0,0,0.7),
+  0 1px 0 rgba(255,255,255,0.05) inset;
 }
 
 
@@ -162,8 +228,24 @@ header {
   letter-spacing: 3px;
   border-left: 1px solid #444;
   padding-left: 15px;
+
+  position: relative;
 }
 
+.shooting-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-10px;
+  width:0;
+  height:1px;
+  background:#555;
+  transition:width 1s ease;
+}
+
+.shooting-title.visible::after{
+  width:120px;
+}
 
 /* Logo navbar rond */
 
@@ -179,6 +261,27 @@ header {
 .navbar-logo:hover {
   transform: scale(1.05);
   opacity: 0.9;
+}
+
+
+/* ===============================
+   LIGNE DE SEPARATION ENTRE CHAQUE SERIE
+================================= */
+
+.shooting-block{
+margin-bottom:120px;
+position:relative;
+}
+
+.shooting-block::after{
+content:"";
+position:absolute;
+bottom:-60px;
+left:50%;
+transform:translateX(-50%);
+width:120px;
+height:1px;
+background:rgba(255,255,255,0.12);
 }
 
 
@@ -208,7 +311,8 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter:blur(6px);
   display: none;
   align-items: center;
   justify-content: center;
@@ -216,11 +320,25 @@ header {
   animation: fadeIn 0.4s ease;
 }
 
+
 .lightbox-img {
   max-width: 90%;
   max-height: 85%;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  box-shadow:0 25px 60px rgba(0,0,0,0.8);
+  border-radius:4px;
   animation: zoomIn 0.4s ease;
+  animation:photoReveal 0.5s ease;
+}
+
+@keyframes photoReveal{
+from{
+transform:scale(0.95);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
 }
 
 .close-lightbox {
@@ -325,4 +443,33 @@ header::after {
 .photo-box.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+
+/* ===============================
+   RESPONSIVE DESIGN - PAGE PHOTOGRAPHIE
+   Tablettes et téléphones
+================================ */
+
+@media (max-width:768px){
+
+.photo-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.shooting-block{
+margin-bottom:80px;
+}
+
+.shooting-title{
+font-size:1.6rem;
+}
+
+.shooting-description{
+font-size:0.95rem;
+line-height:1.6;
+}
+
 }
