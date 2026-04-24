@@ -2,16 +2,18 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mariages</title>
+  <link rel="icon" type="image/png" href="photos/Mon logo(2).png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="mariages.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
 
-   <div class="site-navbar">
+  <div class="site-navbar">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid px-4 px-lg-5">
       
@@ -44,6 +46,8 @@
               <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
               <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
               <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
+              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
+              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
             </ul>
           </li>
 
@@ -65,18 +69,6 @@
           </li>
           -->
 
-          <!-- POST PRODUCTION -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="postDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Post Production
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
-              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
-            </ul>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link" href="photographie.html">Photographie</a>
           </li>
@@ -92,7 +84,11 @@
               <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
             </ul>
           </li>
-
+           <!-- SERVICES -->
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <!-- CONTACT -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
@@ -104,8 +100,6 @@
 </div>
 <br>
 <br>
-
-
   <header class="text-center bg-dark text-light py-5">
     <br>
     <h1 class="section-title header-title" id="film-title">MARIAGES</h1>
@@ -114,29 +108,32 @@
 
   <section class="wedding-block">
 
-
     <div class="video-container">
-      <!-- Ta vidéo YouTube intégrée -->
+      <div class="video-wrapper">
+        <!-- Ta vidéo YouTube intégrée -->
       <iframe width="560" height="315" src="https://www.youtube.com/embed/KR7HsV6PqpQ?si=UGfXYY-54qIIqq9G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      
     </div>
 
-
     <h3 class="video-title">Sophie & Romain</h3>
-
+    <p class="film-meta">
+      2024 · Film de mariage · Occitanie/Château de la Guarrigue
+    </p>
 
     <div class="description">
       <p>Le mariage de Sophie et Romain fut une journée vibrante, portée par la douceur et la complicité. Entre regards échangés, éclats de rire et instants suspendus, chaque image raconte leur histoire avec sincérité. Mon approche, discrète et sensible, cherche à capter l’émotion dans sa vérité la plus simple, pour créer un souvenir intemporel.</p>
 
       <p class="signature">Film réalisé par Megan Mortreux</p>
-
     </div>
 
-    
+    <div class="section-divider"></div>
 
   </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
 
   const title = document.getElementById("film-title");
   const subtitle = document.querySelector(".header-subtitle");
@@ -172,7 +169,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-const weddingBlocks = document.querySelectorAll(".wedding-block");
+
+
+    const weddingBlocks = document.querySelectorAll(".wedding-block");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -183,9 +182,9 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 weddingBlocks.forEach(block => observer.observe(block));
+  </script>
 
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
-
