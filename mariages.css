@@ -24,6 +24,18 @@ body {
   padding: 0;
 }
 
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url(image/grain.jpg);
+opacity:0.03;
+pointer-events:none;
+}
+
 
 /* ===============================
    TYPOGRAPHIE CINÉMATOGRAPHIQUE
@@ -36,9 +48,10 @@ h1, h2, h3 {
 
 p {
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.7;
   color: var(--text-soft);
 }
+
 
 
 /* ===============================
@@ -123,6 +136,24 @@ header {
 
 /* Lumière dorée subtile */
 
+header::before{
+content:"";
+position:absolute;
+bottom:-200px;
+left:-200px;
+width:500px;
+height:500px;
+
+background:radial-gradient(
+circle,
+rgba(198,168,110,0.08),
+transparent 70%
+);
+
+animation: cinematicGlow 32s ease-in-out infinite reverse;
+
+pointer-events:none;
+}
 
 header::after {
   content: "";
@@ -131,12 +162,63 @@ header::after {
   right: -200px;
   width: 600px;
   height: 600px;
+
   background: radial-gradient(
     circle,
-    rgba(198, 168, 110, 0.15),
+    rgba(198,168,110,0.15),
     transparent 70%
   );
+
   pointer-events: none;
+
+  animation: cinematicGlow 26s ease-in-out infinite;
+}
+
+
+@keyframes cinematicGlow {
+  0% {
+    transform: translate(0,0) scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate(-40px,20px) scale(1.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(0,0) scale(1);
+    opacity: 0.5;
+  }
+}
+
+
+.header-title{
+  text-shadow:0 0 10px rgba(212,175,55,0.12);
+  position:relative;
+  display:inline-block;
+  padding-bottom:25px;
+}
+
+.header-title::after{
+content:"";
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+
+bottom:0;
+
+width:90px;
+height:1px;
+
+background:linear-gradient(
+90deg,
+transparent,
+var(--gold-accent),
+transparent
+);
+
+opacity:0.6;
 }
 
 /* Titre animé */
@@ -203,29 +285,35 @@ header::after {
 }
 
 .video-wrapper {
-  position: relative;
   width: 100%;
-  max-width: 960px;
-  padding-bottom: 56.25%;
-  height: 0;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 40px var(--gold-soft);
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.6),
+  0 0 40px var(--gold-soft);
+  opacity:0;
+  transform:scale(0.98);
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
+}
+
+.video-wrapper:hover{
+transform:scale(1.01);
 }
 
 .video-wrapper iframe {
-  position: absolute;
   width: 100%;
   height: 100%;
   border: none;
 }
 
-.video-title {
+.video-title{
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin: 30px 0 15px;
   color: var(--gold-accent);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 
@@ -301,6 +389,13 @@ header::after {
   transform: translateY(0);
 }
 
+.wedding-block.visible .video-wrapper{
+  opacity:1;
+  transform:scale(1);
+}
+
+
+
 /* halo lumière douce */
 
 .wedding-block::after {
@@ -328,5 +423,41 @@ header::after {
 
 
 #film-title {
-  color: #ebe4d8; !important;
+  color: #ebe4d8 !important;
 }
+
+
+
+
+/* ligne dorée entre chaque vidéo */
+
+.section-divider{
+width:120px;
+height:1px;
+margin:80px auto;
+
+background:linear-gradient(
+90deg,
+transparent,
+var(--gold-accent),
+transparent
+);
+
+opacity:0.6;
+}
+
+/* ligne de meta sous le titre */
+
+.film-meta{
+text-align:center;
+margin-top:8px;
+margin-bottom:25px;
+
+font-size:0.8rem;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:var(--text-soft);
+opacity:0.6;
+}
+
