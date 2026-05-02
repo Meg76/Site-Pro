@@ -156,6 +156,10 @@ p {
   text-align: center;
 }
 
+img {
+  pointer-events: auto;
+}
+
 .intro {
   font-size: 1.1rem;
   color: #c0c0c0;
@@ -163,7 +167,7 @@ p {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   padding: 2rem;
   max-width: 1200px;
@@ -171,23 +175,37 @@ p {
 }
 
 .gallery-item {
+  opacity: 0;
+  transform: translateY(30px);
   background: rgba(255, 255, 255, 0.02); /* fond légèrement transparent */
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
-  border: 1px solid #2c2d32;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.6s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
   overflow: hidden;
+  cursor: zoom-in;
+}
+
+.gallery-item.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item:hover{
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(88,166,255,0.3);
 }
 
 
-.gallery-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.gallery-item:hover img{
+transform: scale(1.03);
+filter: brightness(1.05) contrast(105%);
 }
 
 /* Styles généraux */
@@ -196,9 +214,21 @@ p {
   height: auto;
   display: block;
   border-bottom: 1px solid #2c2d32;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
+  cursor: zoom-in;
+  transition: transform 0.4s ease;
 }
 
+.gallery-item img{
+cursor: zoom-in;
+transition: transform 0.4s ease;
+}
+
+.gallery-item.active img{
+transform: scale(1.8);
+z-index: 10;
+position: relative;
+}
 
 /* Portrait */
 .gallery-item img.portrait {
@@ -215,12 +245,6 @@ p {
   opacity: 0.95;
 }
 
-.caption {
-  padding: 1rem;
-  font-size: 1rem;
-  color: #c0c0c0;
-}
-
 .gallery-square {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -230,6 +254,9 @@ p {
 .gallery-square img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
+
+
+
 }
 
 /* Sections distinctes pour les formats */
@@ -302,3 +329,135 @@ p {
 .gallery-featured .gallery-item {
   max-width: 260px; /* ajuste entre 220 et 300 selon ton goût */
 }
+
+
+
+.gallery-item::after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+
+background: linear-gradient(
+120deg,
+transparent,
+rgba(88,166,255,0.15),
+transparent
+);
+
+transition: 0.8s;
+}
+
+.gallery-item:hover::after{
+left:100%;
+}
+
+/*Animation de texte*/
+
+@keyframes fadeSlideUp {
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header h1{
+  opacity: 0;
+  letter-spacing: 5px;
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+header p{
+  opacity: 0;
+  animation: fadeSlideUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+
+@keyframes titleReveal{
+  from{
+    opacity: 0;
+    letter-spacing: 10px;
+  }
+  to{
+    opacity: 1;
+    letter-spacing: 5px;
+  }
+}
+
+.section-title{
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.6s ease;
+}
+
+.section-title.visible{
+opacity: 1;
+transform: translateY(0);
+}
+
+
+
+.lightbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.95);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+
+  z-index: 9999;
+}
+
+.lightbox.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img{
+  pointer-events: none;
+
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+
+  transform: scale(0.9);
+  transition: transform 0.4s ease;
+}
+
+.lightbox.active img{
+  transform: scale(1);
+}
+
+/* Bouton fermer */
+.lightbox .close{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+
+  z-index: 10000;
+}
+
+
+
+
