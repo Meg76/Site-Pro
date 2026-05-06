@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Court Métrage</title>
+  <link rel="icon" type="image/png" href="photos/Mon logo(2).png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="court-metrage.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -43,6 +45,8 @@
               <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
               <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
               <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
+              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
+              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
             </ul>
           </li>
 
@@ -64,17 +68,6 @@
           </li>
           -->
 
-          <!-- POST PRODUCTION -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="postDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Post Production
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
-              <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
-            </ul>
-          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="photographie.html">Photographie</a>
@@ -91,6 +84,10 @@
               <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
             </ul>
           </li>
+          <!-- SERVICES -->
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
@@ -106,9 +103,10 @@
   <header class="text-center bg-dark text-light py-5">
     <br>
     <h1 class="section-title header-title" id="film-title">COURT-MÉTRAGE</h1>
-    <p class="lead">Découvrez mes courts-métrages et univers narratifs.</p>
+    <p class="lead">Raconter une histoire, c’est donner vie à des émotions.<br>Chaque film est une exploration entre narration, esthétique et ressenti.</p>
   </header>
-  <h3 class="video-title">Nous sommes une</h3>
+  <h2 class="video-title fade-text delay-1">Nous sommes une</h2>
+  <p class="intro fade-text">Un court-métrage sur le deuil, la mémoire et la résilience.</p>
   <div class="video-container">
     <!-- Ta vidéo YouTube intégrée -->
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0xM3tnTRfMQ?si=7NWjaIbA5LpjrXyf" 
@@ -117,30 +115,41 @@
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     </iframe>
   </div>
-  <div class="film-roles">
+  <div class="film-roles fade-text delay-2">
   <h4>Rôles sur le projet</h4>
   <p>Réalisation, écriture du scénario, montage, étalonnage et VFX.</p>
 </div>
 
-  <div class="description">
-    <p>
-      Synopsis<br>
-      Nous sommes une s’adresse à celles et ceux qui ont perdu un être cher.<br>
-      À travers Anna, jeune fille confrontée au deuil de sa sœur jumelle Alice, le film explore la manière dont l’absence transforme nos rêves et notre façon d’avancer.<br>
-      <br>
-      Intention<br>
-      En mettant en lumière le lien profond qui unit Anna et Alice, je cherche à montrer comment les souvenirs et l’amour peuvent devenir une force invisible.<br>
-      Alice, présente uniquement dans les pensées d’Anna, incarne ce soutien silencieux qui continue de nous guider malgré l’absence.<br>
-      <br>
-      Thématique<br>
-      Le parcours d’Anna, entre fragilité et espoir, évoque la résilience face à l’épreuve.<br>
-      Le film interroge notre capacité à honorer ceux qui nous ont quittés tout en continuant à croire en nous.<br>
-      <br>
-      Direction artistique<br>
-      Visuellement, le film évolue d’une palette froide vers des teintes plus chaleureuses, traduisant la transformation intérieure d’Anna.<br>
-      La musique accompagne cette progression émotionnelle, amplifiant le passage de l’ombre vers la lumière.<br>
-    </p>
-  </div>
+  <div class="description fade-text delay-3">
+
+  <h4>Synopsis</h4>
+  <p>
+    Nous sommes une s’adresse à celles et ceux qui ont perdu un être cher.
+    À travers Anna, jeune fille confrontée au deuil de sa sœur jumelle Alice,
+    le film explore la manière dont l’absence transforme nos rêves et notre façon d’avancer.
+  </p>
+
+  <h4>Intention</h4>
+  <p>
+    En mettant en lumière le lien profond qui unit Anna et Alice, je cherche à montrer
+    comment les souvenirs et l’amour peuvent devenir une force invisible.
+    Alice, présente uniquement dans les pensées d’Anna, incarne ce soutien silencieux.
+  </p>
+
+  <h4>Thématique</h4>
+  <p>
+    Le parcours d’Anna, entre fragilité et espoir, évoque la résilience face à l’épreuve.
+    Le film interroge notre capacité à honorer ceux qui nous ont quittés.
+  </p>
+
+  <h4>Direction artistique</h4>
+  <p>
+    Le film évolue d’une palette froide vers des teintes plus chaleureuses,
+    traduisant la transformation intérieure d’Anna.
+    La musique accompagne cette progression émotionnelle.
+  </p>
+
+</div>
 
   <!-- Nouveau bouton
    <div class="text-center my-3">
@@ -194,40 +203,27 @@ Avec mon équipe, nous avons voulu recréer l’ambiance des films d’aventure 
 </section>
 
 -->
+
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const title = document.getElementById("film-title");
-  const subtitle = document.querySelector(".header-subtitle");
+  const elements = document.querySelectorAll('.fade-text, .description');
 
-  if (!title) return;
-
-  const text = title.textContent;
-  title.textContent = "";
-
-  text.split("").forEach((letter, index) => {
-    const span = document.createElement("span");
-    span.textContent = letter === " " ? "\u00A0" : letter;
-    title.appendChild(span);
-
-    setTimeout(() => {
-      span.classList.add("reveal");
-    }, index * 80);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
   });
 
-  const totalDuration = text.length * 80;
-
-  setTimeout(() => {
-    title.classList.add("tight");
-  }, totalDuration + 200);
-
-  if (subtitle) {
-    setTimeout(() => {
-      subtitle.classList.add("show");
-    }, totalDuration + 250);
-  }
+  elements.forEach(el => observer.observe(el));
 
 });
 </script>
+
 </body>
 </html>
