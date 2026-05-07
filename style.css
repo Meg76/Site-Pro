@@ -29,6 +29,8 @@ h1, h2, h3 {
   letter-spacing: 1px;
 }
 
+
+
 .hero-content h1 {
   font-size: 4.5rem;
   letter-spacing: 6px;
@@ -814,4 +816,66 @@ section {
     rgba(0,0,0,0.4) 100%
   );
   pointer-events: none;
+}
+
+
+/* SECTION FOOTER */
+
+.site-footer{
+  margin-top: 100px;
+  padding: 60px 20px;
+
+  background: #0d1117;
+  text-align: center;
+
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-content{
+  max-width: 800px;
+  margin: auto;
+}
+
+.footer-name{
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-role{
+  color: #8b949e;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-links{
+  margin-top: 25px;
+}
+
+.footer-links a{
+  margin: 0 10px;
+  color: #c9d1d9;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer-links a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: #58a6ff;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after{
+  width: 100%;
+}
+
+.footer-copy{
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #6e7681;
 }
