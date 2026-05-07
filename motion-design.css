@@ -19,6 +19,20 @@ body {
   padding: 0;
 }
 
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background:repeating-linear-gradient(
+to bottom,
+rgba(255,255,255,0.015),
+rgba(255,255,255,0.015) 1px,
+transparent 1px,
+transparent 3px
+);
+z-index:0;
+}
 
 
 
@@ -192,7 +206,7 @@ section {
 .video-card iframe {
   width: 100%;
   max-width: 100%;
-  height: 300px;
+
   border-radius: 8px;
 }
 
@@ -270,11 +284,7 @@ section {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-.video-card:hover {
-  transform: translateY(-4px);
-  transition: 0.3s ease;
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
-}
+
 
 .youtube-container {
   position: relative;
@@ -294,4 +304,91 @@ section {
   height: 100%;
   border: none;
   border-radius: 12px;
+}
+
+/* Halo interactif futuriste */
+
+.motion-glow {
+position: fixed;
+width: 500px;
+height: 500px;
+pointer-events: none;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(0,240,255,0.15) 0%, transparent 70%);
+transform: translate(-50%, -50%);
+z-index: 0;
+filter: blur(40px);
+transition: opacity 0.3s ease;
+}
+
+.motion-section,
+header{
+position:relative;
+z-index:2;
+}
+
+/* Séparateur HUD */
+
+.motion-section{
+position:relative;
+padding-top:3rem;
+margin-top:4rem;
+}
+
+.motion-section:first-of-type::before{
+display:none;
+}
+
+.motion-section::before{
+content:"";
+position:absolute;
+top:0;
+left:50%;
+transform:translateX(-50%);
+width:0;
+height:1px;
+background:linear-gradient(
+90deg,
+transparent,
+var(--accent),
+transparent
+);
+animation:scanLine 2.5s ease forwards;
+opacity:0.8;
+}
+
+@keyframes scanLine{
+0%{
+width:0;
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+width:70%;
+opacity:0.6;
+}
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width:768px){
+
+.motion-section h2{
+font-size:1.1rem;
+letter-spacing:3px;
+}
+
+.video-grid{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.video-container{
+padding:0.5rem;
+}
+
 }
