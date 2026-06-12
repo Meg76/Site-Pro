@@ -38,7 +38,6 @@ z-index:-1;
   z-index:9999;
 }
 
-
 .navbar-nav .nav-link {
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -155,10 +154,6 @@ header {
   animation-delay:0.6s;
 }
 
-.lead.visible{
-opacity:0.85;
-transform:translateY(0);
-}
 
 .doc-divider{
 width:80px;
@@ -179,11 +174,6 @@ margin:30px auto 40px;
    VIDÉO
 ================================= */
 
-.video-container{
-display:flex;
-justify-content:center;
-margin:120px 20px 60px;
-}
 
 .video-wrapper{
 position:relative;
@@ -294,7 +284,7 @@ opacity:0.9;
 
 .description {
   max-width: 750px;
-  margin: 0 auto 120px;
+  margin: 0 auto 40px;
   text-align: center;
   font-size: 1rem;
   line-height: 1.8;
@@ -358,20 +348,10 @@ margin-bottom:40px;
 opacity:0;
 transform:translateY(10px);
 transition:opacity 1s ease, transform 1s ease;
-}
-
-
-.film-meta{
-opacity:0;
-transform:translateY(10px);
 animation:fadeUp 1s ease forwards;
 animation-delay:1.2s;
 letter-spacing:0.08em;
 transition:letter-spacing 0.6s ease;
-}
-
-.film-block:hover .film-meta{
-letter-spacing:0.12em;
 }
 
 .film-meta.visible{
@@ -386,4 +366,49 @@ opacity:1;
 transform:translateY(0);
 }
 
+}
+
+
+/* ===============================
+   CRÉDITS FILM
+================================= */
+
+.film-credits{
+  max-width:800px;
+  margin:40px auto 40px;
+  padding:0 30px;
+  text-align:center;
+}
+
+.credits-label{
+  display:block;
+  font-size:0.75rem;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:#8f8a81;
+  margin-bottom:25px;
+}
+
+
+.credits-divider{
+  width:80px;
+  height:1px;
+
+  margin:0 auto 25px;
+
+  background:linear-gradient(
+  to right,
+  transparent,
+  rgba(255,255,255,0.35),
+  transparent
+  );
+}
+
+.credits-role{
+  font-family:'Playfair Display', serif;
+  font-size:1.2rem;
+  letter-spacing:0.08em;
+  line-height:1.8;
+  color:#eae6dd;
+  margin:0;
 }
