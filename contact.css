@@ -2,21 +2,27 @@
    BASE
 ================================= */
 
+:root {
+  /* Couleurs générales */
+  --bg-deep: #0c0f14;
+  --text-main: #f2f2f2;
+  --text-soft: #a0a6ad;
+
+  /* Couleurs spécifiques à la page Contact */
+  --contact-line: rgba(210, 190, 150, 0.45);
+  --contact-text: #f2eee6;
+  --contact-text-soft: #c0bbb1;
+  --contact-gold-light: #e6d5b5;
+  --contact-gold: #bca477;
+}
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, #0c0f14, #11151c);
+  background: linear-gradient(to bottom, var(--bg-deep), #11151c);
   color: var(--text-main);
 }
 
-:root {
-  --bg-deep: #0c0f14;
-  --bg-soft: #141821;
-  --text-main: #f2f2f2;
-  --text-soft: #a0a6ad;
-  --accent-soft: rgba(255,255,255,0.08);
-}
 
 /* ===============================
    TYPOGRAPHIE CINÉMATOGRAPHIQUE
@@ -67,7 +73,7 @@ p {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.75);
   padding: 0.5rem 1.5rem;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
 .dropdown-item:hover {
@@ -85,7 +91,7 @@ p {
   object-fit: cover;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.2);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar-logo:hover {
@@ -95,153 +101,373 @@ p {
 
 
 
-
-//* ================= BASE ================= */
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0f0f0f;
-  color: #eae6dd;
-  font-family: 'Inter', sans-serif;
-}
-
-/* ================= HEADER ================= */
+/* =========================================
+   EN-TÊTE
+========================================= */
 
 .contact-header {
-  padding: 100px 20px 60px;
+  position: relative;
+  padding: 125px 20px 62px;
   text-align: center;
-  background-color: #0f0f0f;
+  background: linear-gradient(
+    180deg,
+    #191919 0%,
+    #161616 75%,
+    #111111 100%
+  );
+  overflow: hidden;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    rgba(188, 164, 119, 0.08) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.contact-header::after {
+  content: "";
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  width: 75px;
+  height: 1px;
+  background: var(--contact-line);
+  transform: translateX(-50%);
+}
+
+.contact-header .container {
+  z-index: 1;
 }
 
 .contact-header .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  letter-spacing: 4px;
-  font-weight: 600;
-  color: #ebe4d8;
-  margin-bottom: 10px;
+  margin: 0 0 19px;
+  color: var(--contact-text);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 3.7rem);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
 }
 
 .contact-header .header-subtitle {
-  font-size: 1.05rem;
-  margin-bottom: 0;
-  letter-spacing: 1.5px;
-  opacity: 0.7;
-  color: #e0ddd6;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--contact-text-soft);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
 }
 
-/* ================= INTRO ================= */
+/* =========================================
+   INTRODUCTION
+========================================= */
 
 .contact-intro {
-  padding: 60px 20px;
+  padding: 58px 20px 30px;
   text-align: center;
+}
+
+.contact-intro .container {
+  max-width: 1000px;
 }
 
 .contact-intro p {
-  max-width: 650px;
   margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: #e6e2db;
-  margin-bottom: 0;
+  color: #d9d5cd;
+  font-size: clamp(1rem, 1.8vw, 1.12rem);
+  font-weight: 300;
+  line-height: 1.95;
 }
 
-/* ================= CONTACT INFO ================= */
+/* =========================================
+   BLOC CONTACT
+========================================= */
 
 .contact-main {
-  padding: 40px 20px 60px;
+  position: relative;
+  padding: 35px 20px 70px;
   text-align: center;
 }
 
-.contact-invite {
-  font-size: 1.05rem;
-  opacity: 0.8;
-  margin-bottom: 15px;
+.contact-main .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-email {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 5px;
+  padding: 0 0 10px;
+  color: var(--contact-gold-light);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.25rem, 3.1vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: 0.035em;
   line-height: 1.6;
-  color: #dcd8d0;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.3s ease;
 }
-
-
-.contact-email{
-font-family: 'Playfair Display', serif;
-font-size: 2.4rem;
-letter-spacing: 3px;
-
-color: #ebe4d8;
-text-decoration: none;
-
-transition: all 0.3s ease;
-
-position: relative;
-display: inline-block;
-
-margin-top: 10px;
-}
-
 
 .contact-email::after {
   content: "";
-  display: block;
-  width: 0%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
   height: 1px;
-  background: #ebe4d8;
-  margin: 10px auto 0;
-  transition: width 0.4s ease;
+  background-color: var(--contact-gold);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
 }
 
-.contact-email:hover{
-  opacity: 1;
-  letter-spacing: 4px;
+.contact-email:hover,
+.contact-email:focus-visible {
+  color: #f1e5ca;
 }
 
-.contact-email:hover::after {
+.contact-email:hover::after,
+.contact-email:focus-visible::after {
   width: 100%;
 }
 
-
-.contact-call{
-font-size: 1rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-
-color: rgba(255,255,255,0.6);
-
-margin-bottom: 15px;
+.contact-email:focus-visible {
+  outline: 1px solid var(--contact-gold);
+  outline-offset: 7px;
 }
 
-.contact-main{
-position: relative;
-}
-
-.contact-main::before{
-content:"";
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
-
-width:80px;
-height:1px;
-
-background:rgba(255,255,255,0.15);
-}
-
-/* ================= FOOTER PHRASE ================= */
+/* =========================================
+   PHRASE DE CONCLUSION
+========================================= */
 
 .contact-footer {
+  padding: 12px 20px 76px;
   text-align: center;
-  padding: 10px 20px 60px;
+}
+
+.contact-footer p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #92918c;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
   font-style: italic;
-  font-size: 0.95rem;
-  opacity: 0.6;
-  color: #d8d4cd;
+  font-weight: 400;
+  line-height: 1.8;
 }
 
-html, body {
-  background-color: #0f0f0f !important;
+/* =========================================
+   RESPONSIVE — TABLETTES
+========================================= */
+
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 0.75rem 0.25rem;
+  }
+
+  .contact-header {
+    padding-top: 115px;
+  }
+
+  .contact-header::after {
+  top: 175px;
+  }
+
+
 }
 
-.contact-header {
-  background-color: #0f0f0f !important;
+
+/* =========================================
+   RESPONSIVE — MOBILES
+========================================= */
+
+@media (max-width: 575.98px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-header {
+    padding: 105px 22px 48px;
+  }
+
+  .contact-header::after {
+  top: 160px;
 }
+
+  .contact-header .section-title {
+    margin-bottom: 15px;
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    letter-spacing: 0.13em;
+  }
+
+  .contact-header .header-subtitle {
+    max-width: 340px;
+    font-size: 0.9rem;
+    letter-spacing: 0.025em;
+  }
+
+  .contact-intro {
+    padding: 43px 24px 22px;
+  }
+
+  .contact-intro p {
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .contact-main {
+    padding: 28px 22px 55px;
+  }
+
+  .contact-email {
+    font-size: clamp(1.1rem, 5.3vw, 1.5rem);
+    letter-spacing: 0;
+    line-height: 1.7;
+  }
+
+  .contact-footer {
+    padding: 8px 25px 60px;
+  }
+
+  .contact-footer p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITÉ — RÉDUCTION DES ANIMATIONS
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .contact-header .section-title,
+  .contact-header .header-subtitle,
+  .contact-intro p,
+  .contact-email,
+  .contact-footer p,
+  #contact-title .letter {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact-header::after {
+    animation: none !important;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   ANIMATIONS D'ENTRÉE — PAGE CONTACT
+========================================= */
+
+@keyframes contactReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contactLineReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+
+/* Accroche sous le titre */
+
+.contact-header .header-subtitle {
+  animation: contactReveal 1s ease-out both;
+  animation-delay: 0.3s;
+}
+
+/* Séparateur sous l'en-tête */
+
+.contact-header::after {
+  transform-origin: center;
+  animation: contactLineReveal 0.8s ease-out both;
+  animation-delay: 0.45s;
+}
+
+/* Texte d'introduction */
+
+.contact-intro p {
+  animation: contactReveal 1s ease-out both;
+  animation-delay: 0.45s;
+}
+
+/* Adresse e-mail */
+
+.contact-email {
+  animation: contactReveal 1s ease-out both;
+  animation-delay: 0.65s;
+}
+
+/* Phrase finale */
+
+.contact-footer p {
+  animation: contactReveal 1s ease-out both;
+  animation-delay: 0.8s;
+}
+
+/* Animation du titre CONTACT */
+
+#contact-title .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(28px);
+  animation: contactLetterReveal 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes contactLetterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
