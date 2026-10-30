@@ -110,10 +110,10 @@ p {
   letter-spacing: 4px;
 }
 
-.section-title span {
-  opacity: 0;
-  display: inline-block;
-  transform: translateY(20px);
+/* Les mots restent visibles ; seules leurs lettres sont animées. */
+#film-title .title-word {
+  opacity: 1;
+  transform: none;
 }
 
 .section-title span.reveal {
@@ -254,4 +254,468 @@ header {
 .fade-text.visible{
   opacity: 1;
   transform: translateY(0);
+}
+
+
+
+/* =========================================
+   PAGE RÉSEAUX SOCIAUX
+   ========================================= */
+
+.social-page {
+  --social-text: #f2f2f2;
+  --social-muted: #b1b7bf;
+  --social-border: rgba(255, 255, 255, 0.14);
+
+  background: #0c0f14;
+  color: var(--social-text);
+  font-family: "Inter", sans-serif;
+}
+
+.social-page,
+.social-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+   L’espace supérieur compense la navbar fixe.
+   Ajuster si sa hauteur change.
+   ========================================= */
+
+.social-header {
+  padding: clamp(155px, 17vw, 210px) 24px 80px;
+  text-align: center;
+
+  background: linear-gradient(
+    to bottom,
+    #14171d,
+    #0c0f14
+  );
+
+  border: 0;
+}
+
+.social-header-title {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.025em;
+
+  color: var(--social-text);
+
+  animation: social-header-reveal 0.85s ease both;
+}
+
+/* Signature : une seule ligne, sans effet lumineux. */
+
+.social-signature {
+  display: block;
+  width: 110px;
+  height: 1px;
+  margin: 30px auto;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(230, 233, 238, 0.8),
+    transparent
+  );
+
+  transform-origin: center;
+  animation: social-line-draw 0.8s ease 0.25s both;
+}
+
+.social-header-intro {
+  max-width: 620px;
+  margin: 0 auto;
+
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.9;
+  color: var(--social-muted);
+  text-wrap: pretty;
+
+  animation: social-header-reveal 0.85s ease 0.45s both;
+}
+
+/* =========================================
+   SECTION COLLABORATIONS
+   ========================================= */
+
+.social-collaborations {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 36px 32px 120px;
+}
+
+.social-section-heading {
+  text-align: center;
+}
+
+.social-section-heading h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+
+  color: var(--social-text);
+}
+
+.social-section-line {
+  display: block;
+  width: 70px;
+  height: 1px;
+  margin: 26px auto 56px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(230, 233, 238, 0.55),
+    transparent
+  );
+}
+
+/* =========================================
+   GRILLE DES ENTREPRISES
+   Trois colonnes sur grand écran.
+   ========================================= */
+
+.social-company-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+/* Toute la carte est cliquable. */
+
+.social-company {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+  color: inherit;
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--social-border);
+}
+
+/* Zone commune pour équilibrer les différents logos. */
+
+.social-company-logo {
+  display: block;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid transparent;
+}
+
+.social-company-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*
+   LOGO SOMBRE
+   Si un logo est illisible sur fond sombre,
+   ajouter social-company-logo--light au div :
+
+   class="social-company-logo social-company-logo--light"
+*/
+
+.social-company-logo--light {
+  background: #eeeae4;
+}
+
+/*
+   AJUSTEMENT INDIVIDUEL
+   Pour un logo visuellement trop grand, ajouter :
+
+   class="social-company-logo social-company-logo--compact"
+*/
+
+.social-company-logo--compact img {
+  max-width: 155px;
+}
+
+/* Lien visible également sur mobile, sans survol. */
+
+.social-company-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 20px 0;
+
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--social-muted);
+
+  transition: color 0.3s ease;
+}
+
+.social-company-link > span {
+  font-size: 1.1rem;
+}
+
+/* Survol discret, réservé aux appareils avec souris. */
+
+@media (hover: hover) {
+  .social-company:hover .social-company-logo {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: var(--social-border);
+  }
+
+  .social-company:hover .social-company-logo--light {
+    background-color: #f7f3ed;
+  }
+
+  .social-company:hover .social-company-link {
+    color: var(--social-text);
+  }
+}
+
+/* Navigation au clavier. */
+
+.social-company:focus-visible {
+  outline: 2px solid var(--social-text);
+  outline-offset: 7px;
+}
+
+/* =========================================
+   APPARITIONS AU SCROLL
+   Le contenu reste visible sans JavaScript.
+   ========================================= */
+
+.social-section-heading,
+.social-company {
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.social-reveal-pending {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* Léger décalage entre les cartes d’une même rangée. */
+
+.social-company:nth-child(3n + 2) {
+  transition-delay: 80ms;
+}
+
+.social-company:nth-child(3n + 3) {
+  transition-delay: 160ms;
+}
+
+/* =========================================
+   ANIMATIONS DU HEADER
+   ========================================= */
+
+@keyframes social-header-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes social-line-draw {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================
+   TABLETTE
+   ========================================= */
+
+@media (max-width: 800px) {
+  .social-company-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  /* Réinitialisation du rythme pour deux colonnes. */
+  .social-company:nth-child(n) {
+    transition-delay: 0ms;
+  }
+
+  .social-company:nth-child(2n) {
+    transition-delay: 80ms;
+  }
+
+  .social-collaborations {
+    padding: 30px 24px 90px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 520px) {
+  .social-header {
+    padding: 150px 24px 60px;
+  }
+
+  .social-header-intro {
+    line-height: 1.8;
+  }
+
+  .social-company-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .social-company:nth-child(n) {
+    transition-delay: 0ms;
+  }
+
+  .social-company-logo {
+    min-height: 0;
+    padding: 32px 24px;
+  }
+
+  .social-section-line {
+    margin-bottom: 40px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITÉ : RÉDUCTION DES MOUVEMENTS
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .social-page *,
+  .social-page *::before,
+  .social-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .social-reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* TITRE : apparition progressive des lettres */
+
+#film-title .title-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#film-title .title-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: letterReveal 650ms cubic-bezier(.22, 1, .36, 1) both;
+  animation-delay: var(--letter-delay, 0ms);
+}
+
+/* Respect de la préférence de réduction des mouvements */
+
+@media (prefers-reduced-motion: reduce) {
+  #film-title .title-letter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* Le titre apparaît avant les entreprises. */
+
+.social-section-heading {
+  transition-delay: 0ms;
+}
+
+.social-company-grid .social-company:nth-child(1) {
+  transition-delay: 180ms;
+}
+
+.social-company-grid .social-company:nth-child(2) {
+  transition-delay: 300ms;
+}
+
+.social-company-grid .social-company:nth-child(3) {
+  transition-delay: 420ms;
+}
+
+/* Sur mobile, chaque carte apparaît lorsqu’elle entre à l’écran :
+   pour cette version groupée, on raccourcit simplement les délais. */
+
+@media (max-width: 520px) {
+  .social-company-grid .social-company:nth-child(n) {
+    transition-delay: 150ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-section-heading,
+  .social-company-grid .social-company {
+    transition: none;
+  }
+
+  .social-reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* Séparation entre les deux ensembles de contenus */
+
+.social-divider {
+  width: calc(100% - 48px);
+  max-width: 1096px;
+  height: 1px;
+  margin: 0 auto 70px;
+  padding: 0;
+  border: 0;
+  opacity: 1;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent
+  );
+}
+
+@media (max-width: 520px) {
+  .social-divider {
+    margin-bottom: 45px;
+  }
 }
