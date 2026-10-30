@@ -7,6 +7,10 @@
   <link rel="icon" type="image/png" href="photos/Mon logo(2).png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+  rel="stylesheet">
   <link rel="stylesheet" href="reseaux-sociaux.css">
   <link rel="stylesheet" href="responsive.css">
 </head>
@@ -29,10 +33,9 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Accueil</a>
+            <a class="nav-link" href="index.html">Accueil</a>
           </li>
 
-          <!-- FILMS -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="filmsDropdown"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,50 +46,24 @@
               <li><a class="dropdown-item" href="documentaire.html">Documentaire</a></li>
               <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
               <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
-              <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
+              <a class="dropdown-item active" href="reseaux-sociaux.html"aria-current="page"> Réseaux sociaux</a>
               <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
               <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
             </ul>
           </li>
 
-          <!-- MOTION DESIGN -->
           <li class="nav-item">
             <a class="nav-link" href="motion-design.html">Motion Design</a>
           </li>
-
-         <!-- 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="motionDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Motion Design
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="motion-2d.html">2D</a></li>
-              <li><a class="dropdown-item" href="motion-3d.html">3D</a></li>
-            </ul>
-          </li>
-          -->
 
           <li class="nav-item">
             <a class="nav-link" href="photographie.html">Photographie</a>
           </li>
 
-          <!-- EXPLORATIONS -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="explorationsDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Illustrations
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="creations-visuelles.html">Créations visuelles</a></li>
-              <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
-            </ul>
-          </li>
-          <!-- SERVICES -->
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="creations-visuelles.html">Illustrations</a>
           </li>
-          <!-- CONTACT -->
+
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
@@ -104,131 +81,85 @@
     <p class="lead fade-text">Créer pour les réseaux, c’est capter l’attention en quelques secondes.<br> Chaque contenu est pensé pour engager, rythmer et raconter efficacement.</p>
   </header>
 
-  <section class="projet-section">
-    <h2></h2>
-    <p class="fade-text">Production de contenus pour la chaîne YouTube KPulse, de la captation à la mise en ligne. Réalisation d'une douzaine de vidéos</p>
-    <h2 class="format-title fade-text">Contenus YouTube</h2>
-    <div class="video-grid">
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/E-wL7gbFfmI?si=DZ3s2cH4tI41otwH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Qu'est-ce que le neuromarketing et comment l'appliquer ?</p>
-      </div>
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zRdYjSNC_E4?si=-xMwWrj7MyQqmkXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Qu'est-ce que la capacité d'autofinancement (CAF) ?</p>
-      </div>
-    </div>
-       <div class="video-grid">
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/wWr3iO5SfwA?si=75dTEQI2Vz8Hyu-v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Charges fixes VS Charges variables : quelles différences ?</p>
-      </div>
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/r7-_DSYUWIA?si=EzSCsUGv_vqnGuDz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Comment procéder en cas d’erreur sur une facture ?</p>
-      </div>
+  <section
+    class="social-collaborations"
+    aria-labelledby="collaborations-title"
+  >
+
+    <div class="social-section-heading">
+      <h2 id="collaborations-title">
+        Ils m’ont fait confiance
+      </h2>
+
+      <span class="social-section-line" aria-hidden="true"></span>
     </div>
 
+    <div class="social-company-grid">
+      <a
+        class="social-company"
+        href="prozic.html"
+      >
+        <div class="social-company-logo">
+          <img
+            src="image/Logo/Prozic.jpg"
+            alt="Prozic"
+            width="240"
+            height="120"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
 
-         <div class="video-grid">
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/F9fdMbcUmVk?si=gPqgbtNcXzJY6gt2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Le Cash Flow et le Free Cash Flow</p>
-      </div>
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/t8EV_wrubxg?si=Cftmvr4SeBKhXIz-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">6 conseils pour réussir à internationaliser son business</p>
-      </div>
-    </div>
+        <span class="social-company-link">
+          Voir les réalisations
+          <span aria-hidden="true">↗</span>
+        </span>
+      </a>
+      <a
+        class="social-company"
+        href="adonis.html"
+      >
+        <div class="social-company-logo">
+          <img
+            src="image/Logo/Adonis.png"
+            alt="Nom de l’entreprise 2"
+            width="240"
+            height="120"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
 
+        <span class="social-company-link">
+          Voir les réalisations
+          <span aria-hidden="true">↗</span>
+        </span>
+      </a>
+      
+      <a class="social-company"href="kpulse.html">
+        <div class="social-company-logo">
+          <img
+            src="image/Logo/KPulse.jpg"
+            alt="KPulse"
+            width="240"
+            height="120"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
 
+        <span class="social-company-link">
+          Voir les réalisations
+          <span aria-hidden="true">↗</span>
+        </span>
+      </a>
 
-
-       <div class="video-grid">
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YjH9c9gspIw?si=22LcPAFxAU7-qUtJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Ecole Adonis à Bordeaux</p>
-      </div>
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HKX_RxXzZFk?si=pLjn9dRD3jfOY7kg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Ecole Adonis à Lille</p>
-      </div>
-    </div>
-
-    <div class="video-grid">
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Q_NJUmcwDGc?si=hO_Cz7Hn8bUKsNFG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Raconte-moi l’histoire - Les Animaux Copains</p>
-      </div>
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/0MwN0WAfYxY?si=L6K3BbIq804q7R7h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Focaliz Dictée | par Anaïs DUPONT</p>
-      </div>
-    </div>
-
-
-
-    <div class="video-grid">
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/9Qn9befqDzU?si=dPDOX1xSS4ue5Nen" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">RENCONTRE AVEC L'AUTEUR Patrick Bousquet<br>La Balle rouge - EDITIONS SED</p>
-      </div>
-      <div class="video-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/etpCEkdGDJU?si=URSIEX4b4ifMh33p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p class="caption">Nos collections littérature jeunesse et nos Rencontres Auteurs</p>
-      </div>
-    </div>
-    <br>
-    <p class="fade-text">En parallèle, j’ai développé des formats courts adaptés aux réseaux sociaux et à la publicité. Ces contenus reposent sur un montage plus dynamique, avec une accroche immédiate pour capter l’attention dès les premières secondes.
-</p>
-    <h2 class="format-title fade-text">Formats courts & publicitaires</h2>
-    <div class="video-grid">
-      <div class="video-item">
-        <video autoplay muted loop playsinline controls src="videos/reseaux sociaux/Pub Adonis.mp4"></video>
-        <p class="caption">Pub Adonis</p>
-      </div>
-     <div class="video-item">
-        <video autoplay muted loop playsinline controls src="videos/reseaux sociaux/Pub IESCA.mp4"></video>
-        <p class="caption">Pub IESCA</p>
-      </div>
-     <div class="video-item">
-        <video autoplay muted loop playsinline controls src="videos/reseaux sociaux/Pub Rose Carmin.mp4"></video>
-        <p class="caption">Rose Carmin</p>
-      </div>
-
-      <div class="video-item">
-        <p>Vidéo réalisée pour Bastien Pélissier</p>
-        <video autoplay muted loop playsinline controls src="videos/reseaux sociaux/Kellogg - Bastien Pélissier.mp4"></video>
-        <p class="caption">Kellogg par Bastien Pélissier</p>
-      </div>
     </div>
   </section>
 
-  
- 
-  
+<hr class="social-divider">
+
   </section>
-
-<!--
-  <section class="projet-section">
-    <h2>Expérimentations / Projets Créatifs</h2>
-    <div class="video-grid">
-      <div class="video-item">
-        <video controls src="videos/creatif1.mp4"></video>
-        <p class="caption">Animation abstraite</p>
-      </div>
-      <div class="video-item">
-        <video controls src="videos/creatif2.mp4"></video>
-        <p class="caption">Vidéo expérimentale 2D</p>
-      </div>
-    </div>
-  </section>
-
-  -->
-
-
-
-<script src="js/main.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -266,6 +197,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+(() => {
+  const title = document.getElementById("film-title");
+
+  if (!title) return;
+
+  // Évite de préparer le titre plusieurs fois.
+  if (title.dataset.lettersReady === "true") return;
+  title.dataset.lettersReady = "true";
+
+  const words = title.textContent.trim().split(/\s+/);
+  const fragment = document.createDocumentFragment();
+
+  let letterIndex = 0;
+
+  words.forEach((word, wordIndex) => {
+    const wordSpan = document.createElement("span");
+    wordSpan.className = "title-word";
+    wordSpan.setAttribute("aria-hidden", "true");
+
+    Array.from(word).forEach((letter) => {
+      const letterSpan = document.createElement("span");
+
+      letterSpan.className = "title-letter";
+      letterSpan.textContent = letter;
+
+      // 45 ms de décalage entre chaque lettre.
+      letterSpan.style.setProperty(
+        "--letter-delay",
+        `${150 + letterIndex * 45}ms`
+      );
+
+      wordSpan.appendChild(letterSpan);
+      letterIndex++;
+    });
+
+    fragment.appendChild(wordSpan);
+
+    // Conserve un espace naturel entre les mots.
+    if (wordIndex < words.length - 1) {
+      fragment.appendChild(document.createTextNode(" "));
+    }
+  });
+
+  title.replaceChildren(fragment);
+})();
+
+(() => {
+  const section = document.querySelector(".social-collaborations");
+
+  if (!section) return;
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const heading = section.querySelector(".social-section-heading");
+  const companies = section.querySelectorAll(".social-company");
+
+  const elements = [heading, ...companies].filter(Boolean);
+
+  // Prépare le fondu et la légère remontée.
+  elements.forEach((element) => {
+    element.classList.add("social-reveal-pending");
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      elements.forEach((element) => {
+        element.classList.remove("social-reveal-pending");
+      });
+
+      // Une seule apparition, sans répétition au scroll.
+      observer.unobserve(section);
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  observer.observe(section);
+})();
 
 
 </script>
