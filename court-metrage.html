@@ -6,9 +6,9 @@
   <title>Court Métrage</title>
   <link rel="icon" type="image/png" href="photos/Mon logo(2).png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
   <link rel="stylesheet" href="court-metrage.css">
-  <link rel="stylesheet" href="responsive.css">
+
 </head>
 
 <body>
@@ -30,15 +30,21 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Accueil</a>
+            <a class="nav-link" href="index.html">Accueil</a>
           </li>
 
           <!-- FILMS -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="filmsDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <a
+              class="nav-link dropdown-toggle active"
+              href="#"
+              id="filmsDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              aria-current="page">
               Réalisations
-            </a>
+          </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="court-metrage.html">Court-métrage</a></li>
               <li><a class="dropdown-item" href="documentaire.html">Documentaire</a></li>
@@ -54,173 +60,201 @@
           <li class="nav-item">
             <a class="nav-link" href="motion-design.html">Motion Design</a>
           </li>
-
-         <!-- 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="motionDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Motion Design
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="motion-2d.html">2D</a></li>
-              <li><a class="dropdown-item" href="motion-3d.html">3D</a></li>
-            </ul>
-          </li>
-          -->
-
-
           <li class="nav-item">
             <a class="nav-link" href="photographie.html">Photographie</a>
           </li>
 
-          <!-- EXPLORATIONS -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="explorationsDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Illustrations
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="creations-visuelles.html">Créations visuelles</a></li>
-              <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
-            </ul>
+           <li class="nav-item">
+            <a class="nav-link" href="creations-visuelles.html">Illustrations</a>
           </li>
-          <!-- SERVICES -->
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
-
         </ul>
       </div>
     </div>
   </nav>
 </div>
-<br>
-<br>
   <header class="text-center bg-dark text-light py-5">
-    <br>
     <h1 class="section-title header-title" id="film-title">COURT-MÉTRAGE</h1>
-    <p class="lead">Raconter une histoire, c’est donner vie à des émotions.<br>Chaque film est une exploration entre narration, esthétique et ressenti.</p>
+    <p class="lead">Raconter une histoire, c’est donner vie à des émotions.<br>Chaque film est une exploration entre narration, esthétique et ressenti</p>
   </header>
+
+  <!-- ===============================
+     COURT-MÉTRAGE 1
+================================= -->
+<section class="court-metrage">
+
   <h2 class="video-title fade-text delay-1">Nous sommes une</h2>
-  <p class="intro fade-text">Un court-métrage sur le deuil, la mémoire et la résilience.</p>
+
+  <p class="intro">Un court-métrage sur le deuil, la mémoire et la résilience</p>
+
   <div class="video-container">
-    <!-- Ta vidéo YouTube intégrée -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0xM3tnTRfMQ?si=7NWjaIbA5LpjrXyf" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    <iframe
+      src="https://www.youtube.com/embed/0xM3tnTRfMQ?si=7NWjaIbA5LpjrXyf"
+      title="Nous sommes une — Court-métrage"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
     </iframe>
   </div>
+
   <div class="film-roles fade-text delay-2">
-  <h4>Rôles sur le projet</h4>
-  <p>Réalisation, écriture du scénario, montage, étalonnage et VFX.</p>
-</div>
+    <h4>Rôles sur le projet</h4>
+    <p>Réalisation, écriture du scénario, montage, étalonnage et VFX</p>
+  </div>
 
   <div class="description fade-text delay-3">
-
-  <h4>Synopsis</h4>
-  <p>
+     <p>
     Nous sommes une s’adresse à celles et ceux qui ont perdu un être cher.
     À travers Anna, jeune fille confrontée au deuil de sa sœur jumelle Alice,
     le film explore la manière dont l’absence transforme nos rêves et notre façon d’avancer.
   </p>
 
-  <h4>Intention</h4>
   <p>
     En mettant en lumière le lien profond qui unit Anna et Alice, je cherche à montrer
     comment les souvenirs et l’amour peuvent devenir une force invisible.
     Alice, présente uniquement dans les pensées d’Anna, incarne ce soutien silencieux.
   </p>
 
-  <h4>Thématique</h4>
   <p>
     Le parcours d’Anna, entre fragilité et espoir, évoque la résilience face à l’épreuve.
     Le film interroge notre capacité à honorer ceux qui nous ont quittés.
   </p>
 
-  <h4>Direction artistique</h4>
   <p>
     Le film évolue d’une palette froide vers des teintes plus chaleureuses,
     traduisant la transformation intérieure d’Anna.
     La musique accompagne cette progression émotionnelle.
   </p>
-
-</div>
-
-  <!-- Nouveau bouton
-   <div class="text-center my-3">
-    <a href="https://www.youtube.com/watch?v=TON_LIEN" class="btn-watch" target="_blank">Regarder en entier</a>
-   </div>-->
-
   </div>
 
 </section>
 
-<!--
-<section class="court-metrage">
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=bZIR-ZoZZXQ" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-  </div>
-  <h3 class="video-title">Nébuleuse</h3>
-  <div class="description">
-    <p>Nébuleuse est un court-métrage qui explore la métamorphose intérieure d’une jeune réalisatrice, Jane, tiraillée entre ambition et désillusion. Alors qu’elle cherche à percer dans l’industrie du cinéma, elle fait face à des obstacles qui remettent en question ses rêves. Sa transformation, tant psychologique que symbolique, reflète les sacrifices et les conséquences de la quête du succès.
-L’esthétique du film mêle l’univers sombre et oppressant du film noir à une dimension fantastique, où la réalité se trouble pour illustrer l’état d’esprit de Jane. Jeux de pouvoir, trahisons et dilemmes moraux s’entrelacent, créant une atmosphère à la fois intense et immersive.
-Ce projet rend hommage aux grandes figures féminines du cinéma, tout en abordant une thématique actuelle : la place des réalisatrices dans l’industrie. Il s’inspire de références cinématographiques marquantes, comme Blonde, Hunger Games ou encore Dalida, pour enrichir la mise en scène et la narration.
-À travers Nébuleuse, mon équipe et moi-même avons voulu offrir une réflexion sur l’ambition, la résilience et les luttes que doivent affronter celles qui rêvent de cinéma.</p>
-  </div>
-  <div class="text-center my-3">
-    <a href="https://youtu.be/bZIR-ZoZZXQ" class="btn-watch" target="_blank">Regarder en entier</a>
-   </div>
-</section>
 
-
+<!-- ===============================
+     COURT-MÉTRAGE 2
+================================= -->
 <section class="court-metrage">
 
+  <h2 class="video-title fade-text delay-1">Nébuleuse</h2>
+
+  <p class="intro">
+    Un court-métrage sur les femmes dans le monde du cinéma.
+  </p>
+
   <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0xM3tnTRfMQ?si=7NWjaIbA5LpjrXyf" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    <iframe
+      src="https://www.youtube.com/embed/d_OqB4r6RBo?si=aA5Fa0Xwh4piOo1F"
+      title="Nébuleuse — Court-métrage"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
     </iframe>
   </div>
-  <h3 class="video-title">Mike the Adventurer</h3>
-  <div class="description">
-    <p>Inspiré par l’univers de Steven Spielberg et E.T. l’extra-terrestre, ce court-métrage raconte l’histoire de Mike, un adolescent en quête d’aventure pour échapper à son quotidien. Lors d’une escapade à vélo, il rencontre un être venu d’ailleurs qu’il aide à retrouver son vaisseau, tout en échappant à des camarades qui le harcèlent. En retour, la créature répare la montre de son père décédé, symbolisant pour Mike la réalisation d’une aventure qui aurait rendu son père fier.
-Avec mon équipe, nous avons voulu recréer l’ambiance des films d’aventure des années 80 en travaillant une colorimétrie contrastée et des jeux de lumière chaleureux pour renforcer l’aspect fantastique. La bande-son mêle compositions orchestrales et morceaux emblématiques de l’époque, comme Whip It de Devo, pour accentuer la nostalgie.
-À travers cette histoire d’amitié et de dépassement de soi, nous avons cherché à explorer la magie du quotidien et la poursuite de ses rêves, même face aux obstacles.</p>
+
+  <div class="film-roles fade-text delay-2">
+    <h4>Rôles sur le projet</h4>
+    <p>Réalisation, écriture du scénario, montage et VFX.</p>
   </div>
-  <div class="text-center my-3">
-    <a href="https://www.youtube.com/watch?v=TON_LIEN" class="btn-watch" target="_blank">Regarder en entier</a>
-   </div>
+
+  <div class="description fade-text delay-3">
+    <p>
+    Nébuleuse est un court-métrage qui explore la métamorphose intérieure d’une jeune réalisatrice, Jane, tiraillée entre ambition et désillusion. Alors qu’elle cherche à percer dans l’industrie du cinéma, elle fait face à des obstacles qui remettent en question ses rêves. Sa transformation, tant psychologique que symbolique, reflète les sacrifices et les conséquences de la quête du succès.
+  </p>
+
+  <p>
+    L’esthétique du film mêle l’univers sombre et oppressant du film noir à une dimension fantastique, où la réalité se trouble pour illustrer l’état d’esprit de Jane. Jeux de pouvoir, trahisons et dilemmes moraux s’entrelacent, créant une atmosphère à la fois intense et immersive.
+  </p>
+
+  <p>
+    Ce projet rend hommage aux grandes figures féminines du cinéma, tout en abordant une thématique actuelle : la place des réalisatrices dans l’industrie. Il s’inspire de références cinématographiques marquantes, comme Blonde, Hunger Games ou encore Dalida, pour enrichir la mise en scène et la narration.
+  </p>
+
+  <p>
+    À travers Nébuleuse, mon équipe et moi-même avons voulu offrir une réflexion sur l’ambition, la résilience et les luttes que doivent affronter celles qui rêvent de cinéma.
+  </p>
+  </div>
+
 </section>
 
--->
+
+<!-- ===============================
+     COURT-MÉTRAGE 3
+================================= -->
+<section class="court-metrage">
+
+  <h2 class="video-title fade-text delay-1">Mike the Adventurer</h2>
+
+  <p class="intro">
+    Un court-métrage sur un jeune garçon qui va faire une rencontre
+    qui va changer sa vie.
+  </p>
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/qh0LbGVnI28?si=-BpQpvGOv-jGzZta"
+      title="Mike the Adventurer — Court-métrage"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="film-roles fade-text delay-2">
+    <h4>Rôles sur le projet</h4>
+    <p>Réalisation, écriture du scénario, montage et VFX.</p>
+  </div>
+
+  <div class="description fade-text delay-3">
+    <p>
+    Inspiré par l’univers de Steven Spielberg et E.T. l’extra-terrestre, ce court-métrage raconte l’histoire de Mike, un adolescent en quête d’aventure pour échapper à son quotidien. Lors d’une escapade à vélo, il rencontre un être venu d’ailleurs qu’il aide à retrouver son vaisseau, tout en échappant à des camarades qui le harcèlent. En retour, la créature répare la montre de son père décédé, symbolisant pour Mike la réalisation d’une aventure qui aurait rendu son père fier.
+  </p>
+
+  <p>
+    Avec mon équipe, nous avons voulu recréer l’ambiance des films d’aventure des années 80 en travaillant une colorimétrie contrastée et des jeux de lumière chaleureux pour renforcer l’aspect fantastique. La bande-son mêle compositions orchestrales et morceaux emblématiques de l’époque, comme Whip It de Devo, pour accentuer la nostalgie.
+  </p>
+
+  <p>
+    À travers cette histoire d’amitié et de dépassement de soi, nous avons cherché à explorer la magie du quotidien et la poursuite de ses rêves, même face aux obstacles.
+  </p>
+  </div>
+
+</section>
+
+
 
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const elements = document.querySelectorAll('.fade-text, .description');
+  const elements = document.querySelectorAll(
+    ".fade-text, .description"
+  );
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries, observer) => {
+
     entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("visible");
+
+        // Arrête l'observation une fois l'animation déclenchée.
+        observer.unobserve(entry.target);
+
       }
+
     });
+
   }, {
     threshold: 0.2
   });
 
-  elements.forEach(el => observer.observe(el));
+  elements.forEach(element => observer.observe(element));
 
 });
 </script>
