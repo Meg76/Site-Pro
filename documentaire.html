@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documentaire</title>
+  <<title>Documentaire — Megan Mortreux</title>
   <link rel="icon" type="image/png" href="photos/Mon logo(2).png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="documentaire.css">
-  <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Accueil</a>
+            <a class="nav-link" href="index.html">Accueil</a>
           </li>
 
           <!-- FILMS -->
@@ -41,9 +41,10 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="court-metrage.html">Court-métrage</a></li>
-              <li><a class="dropdown-item" href="documentaire.html">Documentaire</a></li>
+              <li><a class="dropdown-item active" href="documentaire.html" aria-current="page">Documentaire</a></li>
               <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
               <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
+              <li><a class="dropdown-item" href="teasers.html">Teasers</a></li>
               <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
               <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
               <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
@@ -72,7 +73,11 @@
             <a class="nav-link" href="photographie.html">Photographie</a>
           </li>
 
-          <!-- EXPLORATIONS -->
+           <li class="nav-item">
+            <a class="nav-link" href="creations-visuelles.html">Illustrations</a>
+          </li>
+
+          <!-- EXPLORATIONS 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="explorationsDropdown"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,6 +88,8 @@
               <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
             </ul>
           </li>
+
+          -->
              <!-- SERVICES -->
           <li class="nav-item">
             <a class="nav-link" href="services.html">Services</a>
@@ -96,15 +103,10 @@
     </div>
   </nav>
 </div>
-<br>
-<br>
 
 <!-- HEADER -->
 
-  <header class="text-center bg-dark text-light py-5">
-
-    <br>
-
+  <header class="text-center">
     <h1 class="section-title header-title" id="film-title">
       DOCUMENTAIRES
     </h1>
@@ -133,7 +135,7 @@
   <div class="video-container">
     <div class="video-wrapper">
 
-      <iframe src="https://www.youtube.com/embed/9KbiF9jEisU?si=M6W1LOuW3CUMLPI6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/9KbiF9jEisU?si=M6W1LOuW3CUMLPI6" title="L'art pour s'exprimer — Documentaire à l'IME Arc-en-Ciel de Toulouse" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     </div>
   </div>
@@ -169,71 +171,72 @@
   </div>
 
 
-
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
+  // Animation du titre
   const title = document.getElementById("film-title");
-  const subtitle = document.querySelector(".header-subtitle");
 
-  if (!title) return;
+  if (title) {
+    const text = title.textContent.trim();
 
-  const text = title.textContent;
-  title.textContent = "";
+    if (reduceMotion) {
+      title.textContent = text;
+      title.classList.add("tight");
+    } else {
+      title.textContent = "";
 
-  text.split("").forEach((letter, index) => {
-    const span = document.createElement("span");
-    span.textContent = letter === " " ? "\u00A0" : letter;
-    title.appendChild(span);
+      [...text].forEach((letter, index) => {
+        const span = document.createElement("span");
+        span.textContent = letter === " " ? "\u00A0" : letter;
+        title.appendChild(span);
 
-    setTimeout(() => {
-      span.classList.add("reveal");
-    }, index * 80);
-  });
+        setTimeout(() => {
+          span.classList.add("reveal");
+        }, index * 80);
+      });
 
-  const totalDuration = text.length * 80;
-
-  setTimeout(() => {
-    title.classList.add("tight");
-  }, totalDuration + 200);
-
-  if (subtitle) {
-    setTimeout(() => {
-      subtitle.classList.add("show");
-    }, totalDuration + 250);
+      setTimeout(() => {
+        title.classList.add("tight");
+      }, text.length * 80 + 200);
+    }
   }
 
+  // Apparitions au défilement
+  const animatedElements = document.querySelectorAll(
+    ".video-title, .video-container, .video-wrapper, .film-meta"
+  );
+
+  if (
+    !reduceMotion &&
+    "IntersectionObserver" in window
+  ) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  } else {
+    animatedElements.forEach(element => {
+      element.classList.add("visible");
+    });
+  }
 });
-
-const video = document.querySelector(".video-container");
-const videoTitle = document.querySelector(".video-title");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.2 });
-
-if (videoTitle) observer.observe(videoTitle);
-if (video) observer.observe(video);
-
-
-const videos = document.querySelectorAll(".video-wrapper");
-
-const videoObserver = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-});
-},{
-threshold:0.3
-});
-
-videos.forEach(video => videoObserver.observe(video));
 </script>
+
+
 
 
 </body>
