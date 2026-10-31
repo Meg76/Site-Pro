@@ -51,6 +51,17 @@ z-index:-1;
   color: #ffffff !important;
 }
 
+
+/* Élément actif du menu déroulant */
+
+.dropdown-menu-dark .dropdown-item.active,
+.dropdown-menu-dark .dropdown-item:active {
+  background-color: #002e85;
+  color: #ffffff;
+}
+
+
+
 .dropdown-menu {
   background-color: #1a1a1a;
   border: none;
@@ -97,7 +108,7 @@ header {
     #1a1a1a 60%,
     #141414 100%
   );
-  padding: 120px 20px 80px;
+  padding: 100px 20px 30px;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   position:relative;
@@ -155,16 +166,39 @@ header {
 }
 
 
-.doc-divider{
-width:80px;
-height:1px;
-background:linear-gradient(
-to right,
-transparent,
-rgba(255,255,255,0.4),
-transparent
-);
-margin:30px auto 40px;
+/* Ligne sous le titre */
+.doc-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  margin: 30px auto 40px;
+
+  /* État initial */
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+
+  /* Apparition progressive */
+  animation: dividerReveal 1.2s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+/* Animation de la ligne */
+@keyframes dividerReveal {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 
@@ -283,7 +317,7 @@ opacity:0.9;
 ================================= */
 
 .description {
-  max-width: 750px;
+  max-width: 1000px;
   margin: 0 auto 40px;
   text-align: center;
   font-size: 1rem;
@@ -302,9 +336,6 @@ animation:textReveal 1s ease forwards;
 animation-delay:0.2s;
 }
 
-.description span:nth-child(3){
-animation-delay:0.4s;
-}
 
 @keyframes textReveal{
 to{
@@ -333,31 +364,30 @@ transform:translateY(0);
 
 
 
+
 /* ===============================
    META FILM
 ================================= */
 
-.film-meta{
-text-align:center;
-font-size:0.8rem;
-letter-spacing:1px;
-text-transform:uppercase;
-color:#9f9a90;
-margin-top:-10px;
-margin-bottom:40px;
-opacity:0;
-transform:translateY(10px);
-transition:opacity 1s ease, transform 1s ease;
-animation:fadeUp 1s ease forwards;
-animation-delay:1.2s;
-letter-spacing:0.08em;
-transition:letter-spacing 0.6s ease;
+.film-meta {
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9f9a90;
+  margin-top: -10px;
+  margin-bottom: 40px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.film-meta.visible{
-opacity:0.75;
-transform:translateY(0);
+.film-meta.visible {
+  opacity: 0.75;
+  transform: translateY(0);
 }
+
 
 @keyframes fadeUp{
 
@@ -411,4 +441,398 @@ transform:translateY(0);
   line-height:1.8;
   color:#eae6dd;
   margin:0;
+}
+
+
+
+
+/* ===============================
+   ACCESSIBILITÉ : ANIMATIONS
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .header-title {
+    animation: none;
+  }
+
+  .section-title,
+  .section-title span,
+  .lead,
+  .doc-divider,
+  .video-title,
+  .video-container,
+  .video-wrapper,
+  .film-meta,
+  .description span {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+
+  .section-title span,
+  .lead,
+  .doc-divider,
+  .video-title,
+  .video-container,
+  .video-wrapper,
+  .film-meta,
+  .description span {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* ==================================================
+   RESPONSIVE — PAGE DOCUMENTAIRE
+================================================== */
+
+
+/* ===============================
+   TABLETTES ET PETITS ORDINATEURS
+================================= */
+
+@media (max-width: 1024px) {
+
+  /* HEADER */
+
+  header {
+    padding: 110px 30px 65px;
+  }
+
+  .section-title {
+    font-size: 2.6rem;
+    letter-spacing: 8px;
+  }
+
+  .section-title.tight {
+    letter-spacing: 3px;
+  }
+
+  .lead {
+    max-width: 680px;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .doc-divider {
+    margin: 25px auto 35px;
+  }
+
+
+  /* VIDÉO */
+
+  .video-container {
+    margin: 80px 30px 35px;
+  }
+
+  .video-wrapper {
+    max-width: 900px;
+  }
+
+  .video-wrapper::before {
+    top: -70px;
+    right: -70px;
+    bottom: -70px;
+    left: -70px;
+    filter: blur(60px);
+  }
+
+
+  /* TITRE DU FILM */
+
+  .video-title {
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+    margin: 35px 20px 25px;
+  }
+
+
+  /* MÉTADONNÉES */
+
+  .film-meta {
+    font-size: 0.75rem;
+    padding: 0 20px;
+  }
+
+
+  /* CRÉDITS */
+
+  .film-credits {
+    max-width: 700px;
+    margin: 35px auto;
+  }
+
+
+  /* DESCRIPTION */
+
+  .description {
+    max-width: 680px;
+    padding: 0 25px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+}
+
+
+/* ===============================
+   MOBILES
+================================= */
+
+@media (max-width: 768px) {
+
+  /* NAVIGATION */
+
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 0.7rem 0;
+    font-size: 0.82rem;
+  }
+
+  .dropdown-item {
+    font-size: 0.8rem;
+  }
+
+
+  /* HEADER */
+
+  header {
+    padding: 100px 20px 50px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    letter-spacing: 5px;
+    line-height: 1.4;
+  }
+
+  .section-title.tight {
+    letter-spacing: 2px;
+  }
+
+  .lead {
+    max-width: 520px;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .doc-divider {
+    width: 65px;
+    margin: 22px auto 28px;
+  }
+
+
+  /* TITRE DU FILM */
+
+  .video-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin: 35px 18px 22px;
+  }
+
+
+  /* MÉTADONNÉES */
+
+  .film-meta {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+    margin-top: -8px;
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+
+
+  /* VIDÉO */
+
+  .video-container {
+    margin: 55px 15px 30px;
+  }
+
+  .video-wrapper {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+  .video-wrapper iframe {
+    border-radius: 6px;
+  }
+
+  .video-wrapper::before {
+    top: -30px;
+    right: -20px;
+    bottom: -30px;
+    left: -20px;
+    filter: blur(35px);
+  }
+
+  .video-wrapper::after {
+    border-radius: 6px;
+  }
+
+
+  /* CRÉDITS */
+
+  .film-credits {
+    margin: 35px auto;
+    padding: 0 20px;
+  }
+
+  .credits-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 20px;
+  }
+
+  .credits-divider {
+    width: 65px;
+    margin-bottom: 20px;
+  }
+
+  .credits-role {
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+  }
+
+
+  /* DESCRIPTION */
+
+  .description {
+    max-width: 520px;
+    margin: 0 auto 35px;
+    padding: 0 22px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .description span + span {
+    margin-top: 12px;
+  }
+
+}
+
+
+/* ===============================
+   PETITS MOBILES
+================================= */
+
+@media (max-width: 480px) {
+
+  /* HEADER */
+
+  header {
+    padding: 90px 16px 42px;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+    letter-spacing: 3px;
+  }
+
+  .section-title.tight {
+    letter-spacing: 1px;
+  }
+
+  .lead {
+    font-size: 0.84rem;
+    line-height: 1.75;
+  }
+
+  .doc-divider {
+    width: 55px;
+    margin: 20px auto 25px;
+  }
+
+
+  /* TITRE DU FILM */
+
+  .video-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    margin: 30px 15px 20px;
+  }
+
+
+  /* VIDÉO */
+
+  .video-container {
+    margin: 45px 12px 25px;
+  }
+
+  .video-wrapper::before {
+    top: -20px;
+    right: -10px;
+    bottom: -20px;
+    left: -10px;
+    filter: blur(25px);
+  }
+
+
+  /* MÉTADONNÉES */
+
+  .film-meta {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+
+
+  /* CRÉDITS */
+
+  .film-credits {
+    margin: 30px auto;
+    padding: 0 16px;
+  }
+
+  .credits-label {
+    margin-bottom: 16px;
+  }
+
+  .credits-divider {
+    margin-bottom: 16px;
+  }
+
+  .credits-role {
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+
+  /* DESCRIPTION */
+
+  .description {
+    padding: 0 18px;
+    font-size: 0.85rem;
+    line-height: 1.75;
+    margin-bottom: 30px;
+  }
+
+}
+
+
+/* ===============================
+   ACCESSIBILITÉ MOBILE
+================================= */
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+
+  .video-wrapper::before {
+    filter: blur(20px);
+  }
+
 }
