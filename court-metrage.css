@@ -2,10 +2,24 @@
    BASE
 ================================= */
 
+/* ===============================
+   VARIABLES DE COULEUR
+================================= */
+
+:root {
+  --bg-main: #0e0e0e;
+  --bg-header: #11131a;
+
+  --text-main: #f4f1ea;
+  --text-soft: #cfc7b8;
+
+  --blue-accent: #58a6ff;
+}
+
 body {
-  background-color: #0e0e0e; /* facultatif, pour un fond sombre */
+  background-color: var(--bg-main);
   font-family: 'Inter', sans-serif;
-  color: white;
+  color: var(--text-main);
   margin: 0;
   padding: 0;
 }
@@ -109,10 +123,15 @@ p {
 /* Titre animé */
 
 .section-title {
-  font-size: 3rem;
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 600;
   letter-spacing: 12px;
+  text-align: center;
+  color: var(--text-main, #f4f1ea);
+  margin-bottom: 30px;
   transition: letter-spacing 1.8s ease;
-  color: var(--text-main);
 }
 
 .section-title.tight {
@@ -144,12 +163,14 @@ p {
   padding: 60px 20px;
 }
 
-
-.court-metrage .description p,
-.court-metrage .video-title {
-color: white;
+.site-navbar {
+  margin-bottom: 0;
 }
 
+header {
+  margin-top: 80px !important;
+  padding-top: 140px !important;
+}
 
 header{
   background: linear-gradient(
@@ -159,7 +180,7 @@ header{
   ),
   url('illustrations/film-bg.jpg') center/cover no-repeat;
 
-  padding: 140px 20px 100px;
+  padding: 188px 20px 100px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -227,102 +248,89 @@ header{
   }
 }
 
+/* Titres des courts-métrages */
 .video-title {
+  position: relative;
   font-size: 2.2rem;
-  font-family: 'Playfair Display', serif;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  margin: 60px 0 30px;
 }
 
+/* Fine ligne bleue sous les titres */
 .video-title::after {
   content: "";
   display: block;
   width: 60px;
   height: 2px;
-  background: #58a6ff;
   margin: 15px auto 0;
+  background: #58a6ff;
   opacity: 0.6;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
 
-/* Zone de texte d'introduction */
+/* Sous-titres des courts-métrages */
 .intro {
-  text-align: center;
   max-width: 800px;
-  margin: 0 auto 40px auto;
-  font-size: 1.1em;
-  color: #333;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+  color: #adbac7;
 
-    opacity: 0;
+  opacity: 0;
   transform: translateY(20px);
-  animation: introFade 1s ease forwards;
-  animation-delay: 1.2s;
+
+  animation: introFade 1s ease 1.2s forwards;
 }
 
-@keyframes introFade{
-  to{
+@keyframes introFade {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 
+/* ===============================
+   VIDÉOS
+================================= */
 
-/* Vidéo centrée */
 .video-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 0 20px;
 }
 
-.video-container video {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-}
-/*
-.video-container iframe{
-  width: 100%;
-  max-width: 900px;
-  height: 500px;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
-*/
-
-.video-container iframe{
+.video-container iframe {
+  display: block;
   width: 100%;
   max-width: 1000px;
-  height: 560px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+
+  border: 0;
   border-radius: 12px;
 
-  box-shadow: 
-    0 30px 80px rgba(0,0,0,0.8),
-    0 0 40px rgba(88,166,255,0.1);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(88, 166, 255, 0.1);
 
   transition: transform 0.4s ease;
-
 }
 
-.video-container iframe:hover{
-  transform: scale(1.01);
+@media (hover: hover) and (pointer: fine) {
+  .video-container iframe:hover {
+    transform: scale(1.01);
+  }
 }
 
-/* Titre de la vidéo */
-.video-title{
-  font-size: 2.5rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 60px;
-}
 
 /* Description sous la vidéo */
 .description{
@@ -348,72 +356,28 @@ header{
   opacity: 0.5;
 }
 
-.description p {
-  margin-bottom: 25px;
-}
 
-court-metrage {
+/* ===============================
+   SECTIONS DES COURTS-MÉTRAGES
+================================= */
+
+.court-metrage {
   text-align: center;
   padding: 50px 20px 20px;
-  background-color: #11131a; /* même fond que "autres-projets" */
+
 }
 
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #58a6ff;
 }
-
-.intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  font-size: 1.1em;
-  color: #adbac7;
-}
-
-.video-block {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-
-video {
-  width: 100%;
-  max-width: 960px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
-}
-
-
-.video-button {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.btn-watch {
-  background-color: blue;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 30px;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  font-weight: 500;
-}
-
-.btn-watch:hover {
-  background-color: #333;
-}
-
 
 
 /* ===============================
    RÔLES DU PROJET
 ================================= */
 .film-roles {
-  margin-top: 40px;
   max-width: 700px;
   margin: 50px auto 40px;
   text-align: center;
@@ -435,15 +399,6 @@ video {
 }
 
 
-.description h4{
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #8b949e;
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-
 .description p{
   margin-bottom: 20px;
 }
@@ -451,11 +406,15 @@ video {
 
 /*Animation de Texte */
 
-.fade-text{
+.fade-text {
   opacity: 0;
   transform: translateY(30px);
   filter: blur(6px);
-  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .fade-text.visible{
@@ -470,13 +429,48 @@ video {
 .delay-4{ transition-delay: 0.8s; }
 
 
-.description h4{
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: all 0.6s ease;
-}
 
-.description.visible h4{
-  opacity: 1;
-  transform: translateX(0);
+/* ===============================
+   TABLETTES ET MOBILES
+================================= */
+
+@media (max-width: 768px) {
+
+  .section-title {
+    font-size: 2rem;
+    letter-spacing: 5px;
+  }
+
+  .video-title {
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    margin-top: 45px;
+  }
+
+  .video-container {
+    padding: 0 15px;
+  }
+
+  .video-container iframe {
+    border-radius: 8px;
+  }
+
+  .description {
+    margin: 40px 15px 60px;
+    padding: 25px 20px;
+  }
+
+  .film-roles {
+    margin: 35px auto;
+  }
+
+  .film-roles p {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+  }
+
 }
