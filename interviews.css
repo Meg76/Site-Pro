@@ -2,7 +2,6 @@
    BASE
 ================================= */
 
-
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -62,6 +61,15 @@ p {
   padding: 0.8rem 0;
 }
 
+/* Élément actif du menu déroulant */
+
+.dropdown-menu-dark .dropdown-item.active,
+.dropdown-menu-dark .dropdown-item:active {
+  background-color: #002e85;
+  color: #ffffff;
+}
+
+
 .dropdown-item {
   font-size: 0.85rem;
   letter-spacing: 1px;
@@ -107,15 +115,6 @@ p {
   letter-spacing: 4px;
 }
 
-.section-title span {
-  opacity: 0;
-  display: inline-block;
-  transform: translateY(20px);
-}
-
-.section-title span.reveal {
-  animation: letterReveal 0.6s ease forwards;
-}
 
 @keyframes letterReveal {
   to {
@@ -128,7 +127,7 @@ p {
 
 header {
   background: linear-gradient(to bottom, #11151c, #0c0f14);
-  padding: 6rem 2rem 4rem;
+  padding: 7rem 2rem 4rem;
   border-bottom: 1px solid var(--accent-soft);
 }
 
@@ -225,78 +224,282 @@ background:rgba(255,255,255,0.2);
 }
 
 
-/* ===============================
-   ANIMATION TEXTE INTRODUCTION
-================================= */
+/* =========================================
+   HEADER
+   Sans py-5 ni <br> dans le HTML.
+   ========================================= */
 
-.fade-text{
-opacity:0;
-transform:translateY(20px);
-transition:opacity 0.8s ease, transform 0.8s ease;
+header.interviews-header {
+  padding: 140px 24px 60px;
+  background: linear-gradient(to bottom, #11151c, #0c0f14);
+  border-bottom: 1px solid var(--accent-soft);
 }
 
-.fade-text.visible{
-opacity:1;
-transform:translateY(0);
+.interviews-header .section-title {
+  font-size: 2.8rem;
+  font-weight: 600;
 }
 
-/* ===============================
-   APPARITION AU SCROLL - INTERVIEWS
-================================= */
+.interviews-header .lead {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   DEUX ENSEMBLES DE PROJETS
+   ========================================= */
+
+.projet-section {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 65px 32px;
+}
+
+.projet-section + .projet-section {
+  border-top: 1px solid var(--accent-soft);
+}
+
+.project-intro {
+  max-width: 780px;
+  margin-bottom: 32px;
+}
+
+.projet-section .project-label {
+  margin-bottom: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.projet-section h2 {
+  margin-bottom: 20px;
+  padding: 0;
+  border: 0;
+
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.project-intro > p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.projet-section .project-role {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
+
+.project-role strong {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* =========================================
+   VIDÉOS
+   Deux colonnes pour préserver leur lisibilité.
+   La troisième vidéo MJM garde la même taille.
+   ========================================= */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 30px;
+  margin-top: 0;
+}
 
 .video-item {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
 
-.video-item.visible {
+  /* Visible sans JavaScript */
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
-/* ===============================
-   RESPONSIVE TABLETTES ET TELEPHONES
-================================= */
+.video-item iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 
-@media (max-width:992px){
-
-.video-grid{
-grid-template-columns:1fr 1fr;
-gap:25px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.projet-section{
-padding:60px 20px;
+/* Le lecteur ne bouge plus sous la souris. */
+
+.video-item:hover {
+  transform: none;
+  box-shadow: none;
 }
 
+/* Légendes sobres */
+
+.caption {
+  margin: 14px 0 0;
+  padding: 0;
+
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-style: normal;
+  letter-spacing: 0;
+  color: var(--text-main);
 }
 
-@media (max-width:768px){
-
-.video-grid{
-grid-template-columns:1fr;
-gap:30px;
+.caption::after {
+  content: none;
 }
 
-.section-title{
-font-size:2rem;
-letter-spacing:6px;
+/* Apparition préparée uniquement par JavaScript */
+
+.fade-text {
+  opacity: 1;
+  transform: none;
 }
 
-.projet-section p{
-font-size:1rem;
-line-height:1.7;
+.video-item.interview-pending,
+.fade-text.interview-pending {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.caption{
-font-size:0.85rem;
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  header.interviews-header {
+    padding: 125px 24px 45px;
+  }
+
+  .interviews-header .section-title {
+    font-size: 2rem;
+  }
+
+  .projet-section {
+    padding: 45px 24px;
+  }
+
+  .video-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
 }
 
-.video-item iframe{
-width:100%;
-aspect-ratio:16/9;
-height:auto;
+/* =========================================
+   RÉDUCTION DES MOUVEMENTS
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #contenu *,
+  #contenu *::before,
+  #contenu *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  #film-title span,
+  .video-item.interview-pending,
+  .fade-text.interview-pending {
+    opacity: 1;
+    transform: none;
+  }
 }
 
+/* =========================================
+   APPARITION SÉQUENCÉE — INTERVIEWS
+   ========================================= */
+
+/* Le titre utilise désormais des délais CSS par lettre. */
+
+#film-title .interview-title-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: letterReveal 600ms ease both;
+  animation-delay: var(--letter-delay, 0ms);
+}
+
+/* Éléments visibles par défaut lorsque JavaScript est désactivé. */
+
+.interviews-header .header-subtitle,
+.projet-section .project-intro,
+.projet-section .fade-text,
+.projet-section .video-item {
+  opacity: 1;
+  transform: none;
+
+  animation: none;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+/* État d’attente ajouté uniquement par le script. */
+
+.interviews-header .header-subtitle.interview-pending,
+.projet-section .project-intro.interview-pending,
+.projet-section .video-item.interview-pending {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* Les lecteurs restent immobiles au survol. */
+
+.projet-section .video-item:hover {
+  box-shadow: none;
+}
+
+/* Respect des préférences d’accessibilité. */
+
+@media (prefers-reduced-motion: reduce) {
+  #film-title .interview-title-letter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .interviews-header .header-subtitle,
+  .projet-section .project-intro,
+  .projet-section .video-item {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* Navigation sur tablette et mobile */
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    max-height: 75vh;
+    overflow-y: auto;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding-block: 12px;
+  }
 }
