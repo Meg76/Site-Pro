@@ -2,20 +2,29 @@
    BASE
 ================================= */
 
+:root {
+  --bg-main: #16171c;
+  --bg-header: #141414;
+  --text-main: #f8f8f8;
+  --text-soft: #c0c0c0;
+  --blue-accent: #58a6ff;
+}
+
 body {
-  background-color: #16171c; 
+  background-color: var(--bg-main);
   font-family: 'Inter', sans-serif;
-  color: #f8f8f8;
+  color: var(--text-main);
   margin: 0;
   padding: 0;
 }
 
-
 /* ===============================
-   TYPOGRAPHIE CINÉMATOGRAPHIQUE
+   TYPOGRAPHIE
 ================================= */
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
 }
@@ -24,7 +33,57 @@ p {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-soft);
+  text-align: center;
 }
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  letter-spacing: 1px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 12px;
+  transition: letter-spacing 1.8s ease;
+  color: var(--text-main);
+}
+
+.section-title.tight {
+  letter-spacing: 4px;
+}
+
+.section-title span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+}
+
+.section-title span.reveal {
+  animation: letterReveal 0.6s ease forwards;
+}
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ===============================
@@ -87,37 +146,9 @@ p {
   opacity: 0.9;
 }
 
-/* Titre animé */
-
-.section-title {
-  font-size: 3rem;
-  letter-spacing: 12px;
-  transition: letter-spacing 1.8s ease;
-  color: var(--text-main);
-}
-
-.section-title.tight {
-  letter-spacing: 4px;
-}
-
-.section-title span {
-  opacity: 0;
-  display: inline-block;
-  transform: translateY(20px);
-}
-
-.section-title span.reveal {
-  animation: letterReveal 0.6s ease forwards;
-}
-
-@keyframes letterReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 header {
+  margin-top: 70px;
   background: linear-gradient(to bottom, #141414, #16171c);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -127,31 +158,14 @@ header p{
   opacity: 0.85;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  font-weight: bold;
-  
-}
-
-h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
-  color: #f8f8f8;
-  letter-spacing: 1px;
-}
-
-p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  text-align: center;
-}
-
 .intro {
   font-size: 1.1rem;
   color: #c0c0c0;
 }
+
+/* ===============================
+   GALERIE
+================================= */
 
 .gallery {
   display: grid;
@@ -162,32 +176,61 @@ p {
   margin: auto;
 }
 
+.gallery-horizontal,
+.gallery-vertical {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.gallery-horizontal {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gallery-vertical {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ===============================
+   CARTES
+================================= */
+
 .gallery-item {
-  background: rgba(255, 255, 255, 0.02); /* fond légèrement transparent */
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #2c2d32;
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
-  border: 1px solid #2c2d32;
-  transition: all 0.8s ease;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+
   opacity: 0;
   transform: translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    box-shadow 0.8s ease;
 }
 
-.gallery-item.visible{
+.gallery-item.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-
-.gallery-item:hover{
-transform: translateY(-4px) scale(1.01);
-box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+.gallery-item:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Styles généraux */
+/* ===============================
+   IMAGES
+================================= */
+
 .gallery-item img {
   width: 100%;
   height: auto;
@@ -196,9 +239,75 @@ box-shadow: 0 15px 30px rgba(0,0,0,0.4);
   transition: transform 0.5s ease;
 }
 
-.gallery-item:hover img{
-transform: scale(1.03);
+.gallery-horizontal img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
+
+.gallery-vertical img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* ===============================
+   LÉGENDES
+================================= */
+
+.caption {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* ===============================
+   GALERIE MISE EN AVANT
+================================= */
+
+.gallery-featured {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-featured .gallery-item {
+  width: 100%;
+  max-width: 260px;
+}
+
+
+/* ===============================
+   SECTIONS
+================================= */
+
+.gallery-section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.gallery-section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: var(--blue-accent);
+  letter-spacing: 1px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 10px;
+}
+
+
+
+
+
+
 
 
 /* Portrait */
@@ -216,49 +325,7 @@ transform: scale(1.03);
   opacity: 0.95;
 }
 
-.caption{
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #aaa;
-  letter-spacing: 0.5px;
-}
 
-/* Sections distinctes pour les formats */
-.gallery-horizontal,
-.gallery-vertical {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto 60px auto;
-}
-
-/* Titre de section */
-.gallery-section-title {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: #58a6ff;
-  letter-spacing: 1px;
-}
-
-/* Pour différencier visuellement les formats */
-.gallery-horizontal img {
-  aspect-ratio: 16 / 9;
-}
-
-.gallery-vertical img {
-  aspect-ratio: 3 / 4;
-}
-
-.gallery-section {
-  margin: 60px auto;
-  max-width: 1200px;
-  padding: 0 20px;
-}
 
 .gallery-section h2 {
   text-align: center;
@@ -289,15 +356,6 @@ transform: scale(1.03);
 
 
 
-.gallery-featured {
-  justify-content: center;
-  display: flex; /*Image au centre)*/
-}
-
-.gallery-featured .gallery-item {
-  max-width: 260px; /* ajuste entre 220 et 300 selon ton goût */
-}
-
 .gallery-item::after{
 content:"";
 position:absolute;
@@ -320,70 +378,64 @@ transition: 0.8s;
 left:100%;
 }
 
-.gallery-horizontal{
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+/* ===============================
+   LIGHTBOX
+================================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.95);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+  z-index: 9999;
 }
 
-.gallery-vertical{
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
 
-
-
-
-.lightbox{
-position: fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background: rgba(0,0,0,0.95);
-display: flex;
-justify-content: center;
-align-items: center;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.4s ease;
-z-index: 9999;
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
 }
 
-.lightbox.active{
-opacity:1;
-pointer-events: auto;
+.lightbox.active .lightbox-img {
+  transform: scale(1);
 }
 
-.lightbox-img{
-max-width: 90%;
-max-height: 90%;
-border-radius: 8px;
-box-shadow: 0 0 40px rgba(0,0,0,0.8);
+.lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+
+  opacity: 0.7;
+  transition: opacity 0.3s;
 }
 
-/* bouton fermer */
-.lightbox .close{
-position: absolute;
-top: 30px;
-right: 40px;
-font-size: 2rem;
-color: #fff;
-cursor: pointer;
-opacity: 0.7;
-transition: opacity 0.3s;
-}
-
-.lightbox .close:hover{
-opacity:1;
-}
-
-
-.lightbox-img{
-transform: scale(0.95);
-transition: transform 0.4s ease;
-}
-
-.lightbox.active .lightbox-img{
-transform: scale(1);
+.lightbox .close:hover {
+  opacity: 1;
 }
 
 
@@ -409,4 +461,27 @@ header p{
   opacity: 0;
   animation: fadeSlideUp 1s ease-out forwards;
   animation-delay: 0.4s;
+}
+
+
+
+/* ===============================
+   ANIMATIONS
+================================= */
+
+header p {
+  opacity: 0;
+  animation: fadeSlideUp 1s ease-out 0.4s forwards;
+}
+
+/* Respect de la préférence de réduction des mouvements */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
