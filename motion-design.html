@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="motion-design.css">
-  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
   <div class="site-navbar">
@@ -29,7 +28,7 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Accueil</a>
+            <a class="nav-link" href="index.html">Accueil</a>
           </li>
 
           <!-- FILMS -->
@@ -43,6 +42,7 @@
               <li><a class="dropdown-item" href="documentaire.html">Documentaire</a></li>
               <li><a class="dropdown-item" href="mariages.html">Mariages</a></li>
               <li><a class="dropdown-item" href="interviews.html">Interviews</a></li>
+              <li><a class="dropdown-item" href="teasers.html">Teasers</a></li>
               <li><a class="dropdown-item" href="reseaux-sociaux.html">Réseaux sociaux</a></li>
               <li><a class="dropdown-item" href="vfx.html">VFX</a></li>
               <li><a class="dropdown-item" href="etalonnage.html">Étalonnage</a></li>
@@ -51,7 +51,7 @@
 
           <!-- MOTION DESIGN -->
           <li class="nav-item">
-            <a class="nav-link" href="motion-design.html">Motion Design</a>
+            <a class="nav-link active" href="motion-design.html" aria-current="page">Motion Design</a>
           </li>
 
          <!-- 
@@ -71,7 +71,11 @@
             <a class="nav-link" href="photographie.html">Photographie</a>
           </li>
 
-          <!-- EXPLORATIONS -->
+          <li class="nav-item">
+            <a class="nav-link" href="creations-visuelles.html">Illustrations</a>
+          </li>
+
+          <!-- EXPLORATIONS 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="explorationsDropdown"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -82,10 +86,11 @@
               <li><a class="dropdown-item" href="visuels-generatifs.html">Visuels génératifs</a></li>
             </ul>
           </li>
-            <!-- SERVICES -->
+          -->
+            <!-- SERVICES 
           <li class="nav-item">
             <a class="nav-link" href="services.html">Services</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
@@ -100,7 +105,7 @@
   <header class="text-center bg-dark text-light py-5">
     <br>
     <h1 class="section-title header-title" id="film-title">MOTION DESIGN</h1>
-    <p class="lead">Donner du mouvement aux idées. Structurer le rythme. Créer l’impact.</p>
+    <p class="lead header-subtitle">Donner du mouvement aux idées. Structurer le rythme. Créer l’impact</p>
   </header>
 
  <section class="showreel fade-in text-center">
@@ -113,26 +118,33 @@
   </div>
 </section>
 
-  <section class="motion-section">
-    <h2>Projet Générique</h2>
-    <div class="video-grid">
+<section class="motion-section">
+  <h2>Projet Générique</h2>
+
+  <div class="video-grid">
+    <div class="video-card">
       <div class="youtube-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/r_GDnakUsyY?si=JpQjOnfxE1raChM_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-       
+        <iframe
+          src="https://www.youtube.com/embed/r_GDnakUsyY"
+          title="Générique Inframonde"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
-<!--
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
-        <p>Motion explicatif – service Y</p>
-      </div>
+
+      <p>
+        <strong>Générique Inframonde</strong><br>
+        Générique conçu pour mon projet de fin d’études.
+        Inframonde est une série de science-fiction fictive,
+        inspirée de l’univers X-Files.<br>
+        Une direction artistique minimaliste et clinique,
+        où l’étrange s’insinue progressivement dans le réel.
+      </p>
     </div>
--->
   </div>
-      <p>Générique Inframonde <br><br>Générique conçu pour mon projet de fin d’études.
-Inframonde est une série de science-fiction fictive, inspirée de l’univers X-Files.
-Une direction artistique minimaliste et clinique, où l’étrange s’insinue progressivement dans le réel.</p>
-      <div>
-  </section>
+</section>
 
 <section class="motion-section">
   <h2>Projet HUD</h2>
@@ -164,7 +176,6 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
     <div class="video-card">
       <video autoplay muted loop playsinline controls>
         <source src="videos/motion design/ValiseTactile_HD.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
       </video>
       <p>Valise Tactile et Tracking</p>
     </div>
@@ -172,7 +183,6 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
     <div class="video-card">
       <video autoplay muted loop playsinline controls>
         <source src="videos/motion design/Tracking.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
       </video>
       <p>Interface HUD et Tracking</p>
     </div>
@@ -183,11 +193,19 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
 <section class="motion-section">
   <h2>Reproduction de Générique</h2>
   <p>Défis de reproduire des générique de films et de séries</p>
+
   <div class="video-grid">
 
     <div class="video-card">
         <div class="youtube-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/TSXtwI2NWJE?si=9m4uKbkGDLWYcUiC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/TSXtwI2NWJE"
+            title="Reproduction du générique de Dark"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
         </div>
       <p>Reproduction du Générique de Dark</p> 
   </div>
@@ -199,6 +217,19 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
         <p>Reproduction du Générique Black Mirror</p>
     </div>
   </div>
+
+  <br>
+
+    <div class="video-grid">
+
+    <div class="video-card">
+      <video autoplay muted loop playsinline controls>
+        <source src="videos/motion design/Reproduction Générique - Squid Game.mp4" type="video/mp4">
+      </video>
+      <p>Reproduction Générique - Squid Game</p> 
+    </div>
+
+    
 </section>
 
 
@@ -211,7 +242,6 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
     <div class="video-card">
       <video autoplay muted loop playsinline controls>
         <source src="videos/motion design/Animation Logo Youtube.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
       </video>
       <p>Animation Intro - Logo YouTube</p>
     </div>
@@ -219,7 +249,6 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
     <div class="video-card">
       <video autoplay muted loop playsinline controls>
         <source src="videos/motion design/Logo Graphic Design.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
       </video>
       <p>Animation Intro - Logo Graphic Design</p>
     </div>
@@ -237,7 +266,6 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
     <div class="video-card">
       <video autoplay muted loop playsinline controls>
         <source src="videos/motion design/Animation Texte.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
       </video>
       <p>Animation Texte</p>
     </div>
@@ -293,14 +321,12 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
     <div class="video-card">
       <video autoplay muted loop playsinline controls>
         <source src="videos/motion design/LOOP ANIMATION - Halloween.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
       </video>
       <p>ANIMATION - Halloween</p>
     </div>
     <div class="video-card">
       <video autoplay muted loop playsinline controls>
         <source src="videos/motion design/Animation Tetris.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
       </video>
       <p>Animation Tetris</p>
     </div>
@@ -310,50 +336,57 @@ Une direction artistique minimaliste et clinique, où l’étrange s’insinue p
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ===============================
+  // ANIMATION DU TITRE
+  // ===============================
 
   const title = document.getElementById("film-title");
   const subtitle = document.querySelector(".header-subtitle");
 
-  if (!title) return;
+  if (title) {
+    const text = title.textContent;
+    title.textContent = "";
 
-  const text = title.textContent;
-  title.textContent = "";
+    text.split("").forEach((letter, index) => {
+      const span = document.createElement("span");
 
-  text.split("").forEach((letter, index) => {
-    const span = document.createElement("span");
-    span.textContent = letter === " " ? "\u00A0" : letter;
-    title.appendChild(span);
+      span.textContent = letter === " " ? "\u00A0" : letter;
+      title.appendChild(span);
+
+      setTimeout(() => {
+        span.classList.add("reveal");
+      }, index * 80);
+    });
+
+    const totalDuration = text.length * 80;
 
     setTimeout(() => {
-      span.classList.add("reveal");
-    }, index * 80);
-  });
+      title.classList.add("tight");
+    }, totalDuration + 200);
 
-  const totalDuration = text.length * 80;
+    if (subtitle) {
+      setTimeout(() => {
+        subtitle.classList.add("show");
+      }, totalDuration + 250);
+    }
+  }
 
-  setTimeout(() => {
-    title.classList.add("tight");
-  }, totalDuration + 200);
+  // ===============================
+  // HALO INTERACTIF
+  // ===============================
 
-  if (subtitle) {
-    setTimeout(() => {
-      subtitle.classList.add("show");
-    }, totalDuration + 250);
+  const glow = document.querySelector(".motion-glow");
+
+  if (glow) {
+    document.addEventListener("mousemove", (event) => {
+      glow.style.left = `${event.clientX}px`;
+      glow.style.top = `${event.clientY}px`;
+    });
   }
 
 });
-
-const glow = document.querySelector(".motion-glow");
-
-document.addEventListener("mousemove", (e) => {
-
-glow.style.left = e.clientX + "px";
-glow.style.top = e.clientY + "px";
-
-});
-
-
 </script>
 
 <div class="motion-glow"></div>
