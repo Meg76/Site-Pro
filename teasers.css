@@ -1,0 +1,556 @@
+/* =========================================
+   TEASERS — BASE
+   ========================================= */
+
+.teasers-page {
+  --teaser-bg: #0c0f14;
+  --teaser-text: #f2f2f2;
+  --teaser-muted: #b1b7bf;
+  --teaser-line: rgba(255, 255, 255, 0.14);
+
+  margin: 0;
+  background: var(--teaser-bg);
+  color: var(--teaser-text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+}
+
+.teasers-page,
+.teasers-page * {
+  box-sizing: border-box;
+}
+
+.teasers-page h1,
+.teasers-page h2,
+.teasers-page h3,
+.teasers-page p,
+.teasers-page dl {
+  margin: 0;
+}
+
+.teasers-page a:focus-visible,
+.teasers-page button:focus-visible {
+  outline: 2px solid var(--teaser-text);
+  outline-offset: 6px;
+}
+
+/* Accès au contenu au clavier */
+
+.teaser-skip-link {
+  position: fixed;
+  top: 10px;
+  left: 12px;
+  z-index: 1100;
+
+  padding: 10px 18px;
+  background: #fff;
+  color: #111;
+
+  transform: translateY(-160%);
+}
+
+.teaser-skip-link:focus {
+  transform: translateY(0);
+}
+
+/* =========================================
+   HEADER — MÊME RYTHME QUE LES PAGES ENTREPRISE
+   ========================================= */
+
+.teasers-page .teaser-header {
+  padding: 125px 24px 50px;
+  text-align: center;
+  border: 0;
+
+  background: linear-gradient(
+    to bottom,
+    #14171d,
+    var(--teaser-bg)
+  );
+}
+
+
+
+.teasers-page .teaser-header-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.025em;
+  color: var(--teaser-text);
+
+  animation: teaser-entrance 0.85s ease both;
+}
+
+.teaser-signature {
+  display: block;
+  width: 110px;
+  height: 1px;
+  margin: 30px auto;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(230, 233, 238, 0.8),
+    transparent
+  );
+
+  transform-origin: center;
+  animation: teaser-line-draw 0.8s ease 0.25s both;
+}
+
+.teasers-page .teaser-header-intro {
+  max-width: 580px;
+  margin: 0 auto;
+
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--teaser-muted);
+  text-wrap: pretty;
+
+  animation: teaser-entrance 0.85s ease 0.45s both;
+}
+
+/* =========================================
+   STRUCTURE DES PROJETS
+   ========================================= */
+
+.teaser-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.teaser-project {
+  padding: 45px 0 80px;
+}
+
+/* Séparation automatique si plusieurs teasers sont ajoutés */
+
+.teaser-project + .teaser-project {
+  padding-top: 70px;
+  border-top: 1px solid var(--teaser-line);
+}
+
+.teaser-project-heading {
+  margin-bottom: 28px;
+}
+
+.teasers-page .teaser-eyebrow {
+  margin-bottom: 12px;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: var(--teaser-muted);
+}
+
+.teasers-page .teaser-project-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--teaser-text);
+}
+
+/* =========================================
+   VIDÉO
+   Grand format, sans cadre décoratif ni zoom.
+   ========================================= */
+
+.teaser-video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #080a0d;
+}
+
+.teaser-video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================
+   CONTEXTE ET CONTRIBUTIONS
+   ========================================= */
+
+.teaser-project-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 80px);
+  margin-top: 36px;
+}
+
+.teasers-page .teaser-description h3 {
+  margin-bottom: 14px;
+
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--teaser-text);
+}
+
+.teasers-page .teaser-description p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--teaser-muted);
+}
+
+.teaser-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--teaser-muted);
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.teaser-description .teaser-text-link {
+  margin-top: 20px;
+}
+
+.teaser-text-link:hover {
+  color: var(--teaser-text);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.teaser-details {
+  align-self: start;
+}
+
+.teaser-details > div {
+  padding: 16px 0;
+  border-top: 1px solid var(--teaser-line);
+}
+
+.teaser-details dt {
+  margin-bottom: 8px;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teaser-muted);
+}
+
+.teaser-details dd {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--teaser-text);
+}
+
+
+/* =========================================
+   TEASERS — PRÉSENTATION ALTERNÉE
+   ========================================= */
+
+/* La vidéo occupe un peu plus de la moitié de la ligne. */
+
+.teaser-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-areas: "video text";
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+
+  padding: 55px 0 75px;
+}
+
+/* Séparation entre les projets, lorsqu’il y en aura plusieurs. */
+
+.teaser-row + .teaser-row {
+  border-top: 1px solid var(--teaser-line);
+  padding-top: 75px;
+}
+
+.teaser-row-video {
+  grid-area: video;
+  min-width: 0;
+}
+
+.teaser-row-text {
+  grid-area: text;
+  min-width: 0;
+}
+
+/* Projets pairs : texte à gauche, vidéo à droite.
+   Le footer n’est pas compté comme un article. */
+
+.teaser-row:nth-of-type(even) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  grid-template-areas: "text video";
+}
+
+/* TITRE DU PROJET */
+
+.teasers-page .teaser-row-text h2 {
+  margin-bottom: 20px;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.2;
+
+  color: var(--teaser-text);
+}
+
+/* DESCRIPTION COURTE */
+
+.teasers-page .teaser-summary {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--teaser-muted);
+}
+
+/* CONTRIBUTION : une information lisible, sans liste imposante. */
+
+.teasers-page .teaser-role {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--teaser-line);
+
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--teaser-muted);
+}
+
+.teaser-role > span {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--teaser-text);
+}
+
+/* Léger décalage entre la vidéo et le texte. */
+
+.teaser-row-text.teaser-reveal {
+  transition-delay: 120ms;
+}
+
+/* TABLETTE ET MOBILE
+   Chaque vidéo est suivie de son texte, quel que soit le projet.
+*/
+
+@media (max-width: 800px) {
+  .teaser-row,
+  .teaser-row:nth-of-type(even) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "video"
+      "text";
+    gap: 26px;
+
+    padding: 35px 0 50px;
+  }
+
+  .teaser-row + .teaser-row {
+    padding-top: 50px;
+  }
+
+  .teaser-row-text.teaser-reveal {
+    transition-delay: 0ms;
+  }
+}
+
+/* HEADER — cohérent avec les autres pages du portfolio */
+
+.teasers-page .teaser-header {
+  padding: 120px 24px 65px;
+
+  background:
+  radial-gradient(
+    ellipse at 75% 30%,
+    rgba(86, 48, 75, 0.22),
+    transparent 65%
+  ),
+  linear-gradient(
+    135deg,
+    #141116,
+    #0c0f14 80%
+  );
+
+  border-bottom: 1px solid #1f1f1f;
+  text-align: center;
+}
+
+.teasers-page .teaser-header-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 4px;
+}
+
+/* Ligne signature conservée, avec un espacement plus compact */
+
+.teaser-signature {
+  margin: 24px auto;
+}
+
+.teasers-page .teaser-header-intro {
+  max-width: 620px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--teaser-muted);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .teasers-page .teaser-header {
+    padding: 125px 24px 45px;
+  }
+
+  .teasers-page .teaser-header-title {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .teasers-page .teaser-header-intro {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.teaser-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  padding: 30px 0 45px;
+  border-top: 1px solid var(--teaser-line);
+
+  font-size: 0.8rem;
+  color: var(--teaser-muted);
+}
+
+/* =========================================
+   ANIMATIONS
+   Visible par défaut, même sans JavaScript.
+   ========================================= */
+
+.teaser-reveal {
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+.teaser-reveal-pending {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.teaser-details.teaser-reveal {
+  transition-delay: 100ms;
+}
+
+@keyframes teaser-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes teaser-line-draw {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 991px) {
+  .teasers-page .navbar-collapse {
+    max-height: 75vh;
+    overflow-y: auto;
+  }
+
+  .teasers-page .navbar-nav .nav-link {
+    margin-left: 0;
+    padding-block: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .teaser-container {
+    padding: 0 24px;
+  }
+
+  .teaser-project {
+    padding: 30px 0 55px;
+  }
+
+  .teaser-project-info {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 28px;
+  }
+
+  .teaser-project + .teaser-project {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teasers-page .teaser-header {
+    padding: 115px 24px 40px;
+  }
+
+  .teaser-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITÉ — RÉDUCTION DES MOUVEMENTS
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .teasers-page *,
+  .teasers-page *::before,
+  .teasers-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .teaser-reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
